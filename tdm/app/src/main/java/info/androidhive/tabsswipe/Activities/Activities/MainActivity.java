@@ -1,5 +1,6 @@
 package info.androidhive.tabsswipe.Activities.Activities;
 
+import info.androidhive.tabsswipe.Activities.Activities.Ranking.DatosProfesorActivity;
 import info.androidhive.tabsswipe.R;
 import info.androidhive.tabsswipe.Activities.Activities.Adapter.TabsPagerAdapter;
 import android.app.ActionBar;
@@ -10,14 +11,16 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
 public class MainActivity extends FragmentActivity implements
-		ActionBar.TabListener {
+		ActionBar.TabListener{
 
 	private ViewPager viewPager;
 	private TabsPagerAdapter mAdapter;
 	private ActionBar actionBar;
 	// Tab titles
 	private String[] tabs = { "Ranking", "Buscar", "Usuario" };
-	private ProfesorFragment _profesorFragment;
+	private DatosProfesorActivity _profesorFragment;
+
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -75,5 +78,4 @@ public class MainActivity extends FragmentActivity implements
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
-
 }

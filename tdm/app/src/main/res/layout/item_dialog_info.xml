@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="horizontal" android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal">
 
-	<TextView android:layout_width="fill_parent" android:id="@+id/txtPuntuacion"
-		android:layout_gravity="center" android:layout_height="wrap_content"
-		android:textSize="40dp"/>
-	<TextView android:layout_width="fill_parent" android:id="@+id/txtNombreProfesor"
-		android:layout_gravity="center" android:layout_height="wrap_content"
-		android:textSize="20dp"/>
+    <TextView
+        android:id="@+id/lblPuntuacion"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/lblNombreProfesor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="20dp" />
 </LinearLayout>

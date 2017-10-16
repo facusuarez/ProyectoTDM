@@ -65,9 +65,9 @@ public class ProfesorAdapter extends BaseAdapter {
             view = _inflater.inflate(R.layout.item_dialog_info, null);
             holder = new Holder();
             holder.txtPuntuacion = (TextView) view
-                    .findViewById(R.id.txtPuntuacion);
+                    .findViewById(R.id.lblPuntuacion);
             holder.txtNombreProfesor = (TextView) view
-                    .findViewById(R.id.txtNombreProfesor);
+                    .findViewById(R.id.lblNombreProfesor);
             view.setTag(holder);
         } else {
             holder = (Holder) view.getTag();

@@ -7,13 +7,23 @@ package info.androidhive.tabsswipe.Activities.Entities;
 public class Profesor {
     private String nombre;
     private String apellido;
+    private int id_profesor;
 
-    public Profesor(String nombre, String apellido) {
+    public Profesor(String nombre, String apellido, int id_profesor) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.id_profesor=id_profesor;
     }
 
     public Profesor() {
+    }
+
+    public int getId_profesor() {
+        return id_profesor;
+    }
+
+    public void setId_profesor(int id_profesor) {
+        this.id_profesor = id_profesor;
     }
 
     public String getNombre() {

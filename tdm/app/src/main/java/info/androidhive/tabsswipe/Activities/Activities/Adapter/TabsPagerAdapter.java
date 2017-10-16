@@ -2,7 +2,7 @@ package info.androidhive.tabsswipe.Activities.Activities.Adapter;
 
 import info.androidhive.tabsswipe.Activities.Activities.SearchFragment;
 import info.androidhive.tabsswipe.Activities.Activities.UserFragment;
-import info.androidhive.tabsswipe.Activities.Activities.RankingFragment;
+import info.androidhive.tabsswipe.Activities.Activities.Ranking.RankingFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;

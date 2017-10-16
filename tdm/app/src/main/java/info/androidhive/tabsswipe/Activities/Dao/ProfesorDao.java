@@ -28,6 +28,7 @@ public class ProfesorDao {
         values.put("nombre", profesor.getNombre());
         int id = (int)db.insert("profesores", null, values);
         db.close();
+        profesor.setId_profesor(id);
         return id;
     }
 
@@ -40,13 +41,16 @@ public class ProfesorDao {
             Profesor profe = null;
             int indexNombre = -1;
             int indexApellido = -1;
+            int indexID=-1;
             profesores = new ArrayList<Profesor>();
             indexNombre = cursor.getColumnIndex("nombre");
             indexApellido = cursor.getColumnIndex("apellido");
+            indexID= cursor.getColumnIndex("id_profesor");
             while (cursor.moveToNext()) {
                 profe = new Profesor();
                 profe.setNombre(cursor.getString(indexNombre));
                 profe.setApellido(cursor.getString(indexApellido));
+                profe.setId_profesor(cursor.getInt(indexID));
                 profesores.add(profe);
             }
         }

@@ -7,12 +7,24 @@ package info.androidhive.tabsswipe.Activities.Entities;
 public class Catedra {
 
     private String nombre;
+    private int id_catedra;
 
-    public Catedra(String nombre) {
+
+    public Catedra(String nombre, int id_catedra) {
         this.nombre = nombre;
+        this.id_catedra=id_catedra;
     }
 
     public Catedra() {
+    }
+
+
+    public int getId_catedra() {
+        return id_catedra;
+    }
+
+    public void setId_catedra(int id_catedra) {
+        this.id_catedra = id_catedra;
     }
 
     public String getNombre() {

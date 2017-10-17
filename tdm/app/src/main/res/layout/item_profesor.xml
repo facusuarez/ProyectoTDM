@@ -8,8 +8,7 @@
         android:id="@+id/lblPuntuacion"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="40dp" />
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/lblNombreProfesor"
@@ -17,5 +16,5 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 </LinearLayout>

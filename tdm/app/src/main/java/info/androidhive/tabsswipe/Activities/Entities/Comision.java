@@ -7,12 +7,22 @@ package info.androidhive.tabsswipe.Activities.Entities;
 public class Comision {
 
     private String nombre;
+    private int id_comision;
 
     public Comision(String nombre) {
         this.nombre = nombre;
     }
 
     public Comision() {
+    }
+
+
+    public int getId_comision() {
+        return id_comision;
+    }
+
+    public void setId_comision(int id_comision) {
+        this.id_comision = id_comision;
     }
 
     public String getNombre() {

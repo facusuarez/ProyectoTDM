@@ -11,8 +11,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    static final String DATABASE_NAME="TDM_MasterList";
-    static final int DATABASE_VERSION=1;
+    static final String DATABASE_NAME = "TDM_MasterList";
+    static final int DATABASE_VERSION = 1;
 
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -35,55 +35,66 @@ public class DBHelper extends SQLiteOpenHelper {
     private void cargarDatosIniciales(SQLiteDatabase db) {
         //profesores
         ContentValues values = new ContentValues();
-        values.put("nombre","Cecilia");
-        values.put("apellido","Sanchez");
-        db.insert("profesores",null,values);
+        values.put("nombre", "Cecilia");//id 1
+        values.put("apellido", "Sanchez");
+        db.insert("profesores", null, values);
         values.clear();
-        values.put("nombre","Valerio");
-        values.put("apellido","Fritelli");
-        db.insert("profesores",null,values);
+        values.put("nombre", "Valerio");//id 2
+        values.put("apellido", "Fritelli");
+        db.insert("profesores", null, values);
         values.clear();
-        values.put("nombre","Jose Luis");
-        values.put("apellido","Galoppo");
-        db.insert("profesores",null,values);
-        values.clear();
-
-        values.put("nombre","Redes de Información");
-        db.insert("catedras",null,values);
-        values.clear();
-        values.put("nombre","Algoritmos y Estructuras de Datos");
-        db.insert("catedras",null,values);
+        values.put("nombre", "Jose Luis");//id 3
+        values.put("apellido", "Galoppo");
+        db.insert("profesores", null, values);
         values.clear();
 
-        values.put("nombre","4K1");
+        values.put("nombre","4K1");//id 1
         db.insert("comisiones",null,values);
         values.clear();
-        values.put("nombre","4K4");
+        values.put("nombre","4K4");//id 2
         db.insert("comisiones",null,values);
         values.clear();
-        values.put("nombre","1K1");
+        values.put("nombre","1K1");//id 3
+        db.insert("comisiones",null,values);
+        values.clear();
+        values.put("nombre","2K2");//id 4
         db.insert("comisiones",null,values);
         values.clear();
 
-        values.put("id_profesor","1");
-        values.put("id_comision","1");
-        values.put("id_catedra","1");
-        db.insert("profe_catedra_comision",null,values);
+        values.put("nombre", "Redes de Información");//id 1
+        db.insert("catedras", null, values);
         values.clear();
-        values.put("id_profesor","2");
-        values.put("id_comision","3");
-        values.put("id_catedra","2");
-        db.insert("profe_catedra_comision",null,values);
+        values.put("nombre", "Algoritmos y Estructuras de Datos");//id 2
+        db.insert("catedras", null, values);
         values.clear();
-        values.put("id_profesor","3");
-        values.put("id_comision","2");
-        values.put("id_catedra","1");
-        db.insert("profe_catedra_comision",null,values);
+        values.put("nombre", "Sistemas Operativos");//id 3
+        db.insert("catedras", null, values);
         values.clear();
 
-        values.put("nombre","admin");
-        values.put("password","Admin00");
-        db.insert("usuarios",null,values);
+        values.put("id_profesor", "1");//id 1
+        values.put("id_comision", "1");
+        values.put("id_catedra", "1");
+        db.insert("profe_catedra_comision", null, values);
+        values.clear();
+        values.put("id_profesor", "2");//id 2
+        values.put("id_comision", "3");
+        values.put("id_catedra", "2");
+        db.insert("profe_catedra_comision", null, values);
+        values.clear();
+        values.put("id_profesor", "3");//id 3
+        values.put("id_comision", "2");
+        values.put("id_catedra", "1");
+        db.insert("profe_catedra_comision", null, values);
+        values.clear();
+        values.put("id_profesor", "1");//id 4
+        values.put("id_comision", "4");
+        values.put("id_catedra", "3");
+        db.insert("profe_catedra_comision", null, values);
+        values.clear();
+
+        values.put("nombre", "admin");
+        values.put("password", "Admin00");
+        db.insert("usuarios", null, values);
         values.clear();
     }
 

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#96C9CA"
     android:orientation="vertical">
 
     <TextView
@@ -9,13 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:layout_gravity="center">
 
         <RatingBar
             android:id="@+id/ratingProfe"
@@ -27,7 +28,8 @@
             android:id="@+id/lblPuntuacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"/>
+            android:textSize="20sp"/>
+
     </LinearLayout>
 
 
@@ -41,7 +43,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Enviar" />
+        android:layout_gravity="center"
+        android:text="@string/enviar" />
 
 
 </LinearLayout>

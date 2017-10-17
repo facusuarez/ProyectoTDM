@@ -1,23 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#96C9CA"
+    android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/txtNombre"
-        android:textSize="70dp"/>
-
-    <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ratingProfe" />
+        android:textSize="70sp"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#DDF7F7"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:layout_gravity="center">
+
+        <RatingBar
+            android:id="@+id/ratingProfe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtPuntajeActualProfe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#DDF7F7"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/comisiones"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/lblComisiones"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#DDF7F7"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/materias"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/lblMaterias"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/lblCantidadComentarios"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="#929B9B"
+            android:textSize="20sp"/>
+
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@id/android:list"> </ListView>
 
     <TextView
+        android:id="@id/android:empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtPuntajeActualProfe"
-        android:textSize="40dp"/>
+        android:text="@string/lista_vacia" />
+
 
 </LinearLayout>

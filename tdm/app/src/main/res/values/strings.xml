@@ -4,4 +4,8 @@
     <string name="action_settings">Opciones</string>
     <string name="datos_profesor">Profesor</string>
     <string name="lista_vacia">No se encuentran elementos</string>
+    <string name="comisiones">Comisiones: </string>
+    <string name="materias">Materias: </string>
+    <string name="comentarios">comentarios </string>
+    <string name="enviar">Enviar </string>
 </resources>

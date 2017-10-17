@@ -62,7 +62,7 @@ public class ProfesorAdapter extends BaseAdapter {
     public View getView(int position, View view, ViewGroup parent) {
         Holder holder = null;
         if (view == null) {
-            view = _inflater.inflate(R.layout.item_dialog_info, null);
+            view = _inflater.inflate(R.layout.item_profesor, null);
             holder = new Holder();
             holder.txtPuntuacion = (TextView) view
                     .findViewById(R.id.lblPuntuacion);

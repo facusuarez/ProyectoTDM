@@ -1,7 +1,6 @@
 package info.androidhive.tabsswipe.Activities.Activities.Ranking;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -10,6 +9,11 @@ import android.os.Bundle;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import java.util.List;
+
+import info.androidhive.tabsswipe.Activities.Dao.ProfesorDao;
+import info.androidhive.tabsswipe.Activities.Entities.Catedra;
+import info.androidhive.tabsswipe.Activities.Entities.Comision;
 import info.androidhive.tabsswipe.R;
 
 /**
@@ -40,16 +44,16 @@ public class DatosProfesorActivity extends Activity {
     }
 
     private void puntuar(float rating) {
-        Intent i = new Intent(this,PuntuacionActivity.class);
-        i.putExtra("idProfe",_idProfe);
-        i.putExtra("rating",rating);
-        i.putExtra("nombreProfe",_tvNombre.getText());
+        Intent i = new Intent(this, PuntuacionActivity.class);
+        i.putExtra("idProfe", _idProfe);
+        i.putExtra("rating", rating);
+        i.putExtra("nombreProfe", _tvNombre.getText());
         startActivity(i);
     }
 
     public void mostrarDetalle() {
         _tvNombre = (TextView) findViewById(R.id.txtNombre);
-        String nombreProfe = "";
+        String nombreProfe;
         Bundle extras = getIntent().getExtras();
         if (extras == null) {
             nombreProfe = "Ningún profesor seleccionado";
@@ -58,6 +62,32 @@ public class DatosProfesorActivity extends Activity {
             _idProfe = extras.getInt("idProfe");
         }
         _tvNombre.setText(nombreProfe);
+
+        ProfesorDao profesorDao = new ProfesorDao(this);
+
+        TextView tvMaterias = (TextView) findViewById(R.id.lblMaterias);
+        List<Catedra> catedras = profesorDao.ObtenerCatedrasPorProfesor(_idProfe);
+        for (int i = 0; i < catedras.size(); i++) {
+            if (i==0) tvMaterias.setText(" "+catedras.get(i).getNombre());
+            else tvMaterias.setText(tvMaterias.getText()+"\n"+catedras.get(i).getNombre());
+        }
+
+        TextView tvComisiones = (TextView) findViewById(R.id.lblComisiones);
+        List<Comision> comisiones = profesorDao.ObtenerComisionesPorProfesor(_idProfe);
+        for (int i = 0; i < comisiones.size(); i++) {
+            if (i==0) tvComisiones.setText(" "+comisiones.get(i).getNombre());
+            else tvComisiones.setText(tvComisiones.getText()+" - "+comisiones.get(i).getNombre());
+        }
+
+        TextView tvCantComentarios = (TextView) findViewById(R.id.lblCantidadComentarios);
+        long count= profesorDao.CantidadComentariosPorProfesor(_idProfe);
+        if (count==0){
+            tvCantComentarios.setText("Sin comentarios");
+        }else if (count==1){
+            tvCantComentarios.setText("1 comentario");
+        }else if (count>1){
+            tvCantComentarios.setText(count+" comentarios");
+        }
     }
 
 

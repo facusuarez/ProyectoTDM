@@ -14,7 +14,11 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 import info.androidhive.tabsswipe.Activities.Dao.ComentarioDao;
 import info.androidhive.tabsswipe.Activities.Entities.Comentario;
@@ -44,6 +48,7 @@ public class PuntuacionActivity extends Activity {
         mostrarDatos();
 
         Button btnEnviar = (Button) findViewById(R.id.btnEnviar);
+
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,9 +89,6 @@ public class PuntuacionActivity extends Activity {
         comentario.setPuntaje(_ratingBar.getRating());
         comentario.setId_profesor(_idProfe);
 
-        //DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy HH:mm:ss");
-        //Date date = new Date();
-        //System.out.println(dateFormat.format(date));
 
         comentario.setFecha(new Date());
 

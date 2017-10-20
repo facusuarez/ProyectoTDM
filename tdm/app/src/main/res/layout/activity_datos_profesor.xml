@@ -101,13 +101,11 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@id/android:list"> </ListView>
+        android:id="@id/android:list"
+        android:layout_marginRight="5sp"
+        android:layout_marginLeft="5sp"
+        > </ListView>
 
-    <TextView
-        android:id="@id/android:empty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lista_vacia" />
 
 
 </LinearLayout>

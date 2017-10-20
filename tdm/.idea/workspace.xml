@@ -44,8 +44,41 @@
       <file leaf-file-name="DatosProfesorActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/DatosProfesorActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="78" column="65" selection-start-line="78" selection-start-column="65" selection-end-line="78" selection-end-column="65" />
+            <state relative-caret-position="362">
+              <caret line="118" column="10" selection-start-line="118" selection-start-column="10" selection-end-line="118" selection-end-column="10" />
+              <folding>
+                <element signature="e#1528#1739#0" expanded="true" />
+                <element signature="e#1738#1739#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PuntuacionActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/PuntuacionActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1139">
+              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RankingFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/RankingFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="53" column="51" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComentariosAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Adapter/ComentariosAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="68" column="27" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,74 +86,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item_profesor.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_profesor.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProfesorDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Dao/ProfesorDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="119" column="19" selection-start-line="119" selection-start-column="19" selection-end-line="119" selection-end-column="19" />
-              <folding>
-                <element signature="e#630#631#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Dao/DBHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
-              <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_datos_profesor.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="activity_datos_profesor.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_datos_profesor.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="32" />
+            <state relative-caret-position="367">
+              <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_puntuacion.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml">
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item_comentario.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_comentario.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+            <state relative-caret-position="469">
+              <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
               <folding>
-                <element signature="e#1440#1456#0" expanded="true" />
+                <element signature="e#1590#1608#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            <state relative-caret-position="170">
+              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -132,10 +130,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
-        <option value="layoutResourceFile_vertical" />
         <option value="valueResourceFile" />
         <option value="resourceFile" />
+        <option value="Class" />
+        <option value="layoutResourceFile_vertical" />
       </list>
     </option>
   </component>
@@ -1821,8 +1819,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/searchable.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_top_rated.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/TopRatedFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/RankingFragment.java" />
@@ -1855,23 +1851,25 @@
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/DatosProfesor.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Entities/Comentario.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Dao/ComentarioDao.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_dialog_info.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/RankingFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Adapter/ProfesorAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/stars_ratingbar.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/PuntuacionActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/color/light_blue.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Entities/Catedra.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Dao/DBHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Entities/Comision.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Dao/ProfesorDao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_datos_profesor.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/DatosProfesorActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_profesor.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/PuntuacionActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Dao/ComentarioDao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Adapter/ComentariosAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/DatosProfesorActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_comentario.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_datos_profesor.xml" />
       </list>
     </option>
   </component>
@@ -1906,11 +1904,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2030,6 +2025,62 @@
               <option name="myItemId" value="Activities" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Activities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tdm" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Activities" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Activities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ranking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tdm" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Activities" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Activities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Adapter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2043,7 +2094,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2410,6 +2464,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2246596" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2422,7 +2477,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2438,58 +2492,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/PuntuacionActivity.java</url>
-          <line>95</line>
-          <properties />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Dao/ComentarioDao.java</url>
-          <line>22</line>
-          <properties />
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Dao/ProfesorDao.java</url>
-          <line>72</line>
-          <properties />
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Dao/ProfesorDao.java</url>
-          <line>104</line>
-          <properties />
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="36" />
+      <option name="time" value="47" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-18/android.jar!/android/content/ContentValues.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-18/android.jar!/android/database/sqlite/SQLiteDatabase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="230" column="83" selection-start-line="230" selection-start-column="83" selection-end-line="230" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0-sources.jar!/android/support/v4/app/Fragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="1493" column="0" selection-start-line="1493" selection-start-column="0" selection-end-line="1493" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0-sources.jar!/android/support/v4/app/BackStackRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -2547,23 +2554,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_user.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_user.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Adapter/ProfesorSeleccionadoHandler.java" />
@@ -2622,14 +2629,14 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/RankingListFragment.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_fragment_ranking.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/MainActivity.java">
@@ -2652,13 +2659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Entities/Comentario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-18/android.jar!/android/database/sqlite/SQLiteOpenHelper.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -2673,39 +2673,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Dao/ComentarioDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Adapter/ProfesorAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="70" column="32" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1240#1241#0" expanded="false" />
-            <element signature="e#1281#1282#0" expanded="false" />
-            <element signature="e#1334#1335#0" expanded="false" />
-            <element signature="e#1378#1379#0" expanded="false" />
-            <element signature="e#1431#1432#0" expanded="false" />
-            <element signature="e#1458#1459#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/RankingFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="45" column="94" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -2716,18 +2684,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/stars_ratingbar.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/star-empty.png" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/color/light_blue.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/color/light_blue.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_ranking.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="16" selection-end-column="45" />
@@ -2735,6 +2693,9 @@
             <element signature="e#586#607#0" expanded="false" />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Entities/Catedra.java">
@@ -2748,14 +2709,6 @@
             <element signature="e#530#531#0" expanded="true" />
             <element signature="e#559#560#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/PuntuacionActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="40" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2773,75 +2726,145 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Dao/ProfesorDao.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="119" column="19" selection-start-line="119" selection-start-column="19" selection-end-line="119" selection-end-column="19" />
-          <folding>
-            <element signature="e#630#631#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="303">
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_profesor.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Entities/Comentario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Dao/DBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+        <state relative-caret-position="425">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Dao/ProfesorDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="120">
+          <caret line="94" column="108" selection-start-line="94" selection-start-column="108" selection-end-line="94" selection-end-column="108" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-18/android.jar!/android/widget/AbsListView.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-          <folding>
-            <element signature="e#1440#1456#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="208">
+          <caret line="602" column="0" selection-start-line="602" selection-start-column="0" selection-end-line="602" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/DatosProfesorActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/RankingFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="78" column="65" selection-start-line="78" selection-start-column="65" selection-end-line="78" selection-end-column="65" />
+        <state relative-caret-position="222">
+          <caret line="53" column="51" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Dao/ComentarioDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-314">
+          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_datos_profesor.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="32" />
+        <state relative-caret-position="170">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_profesor.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Adapter/ProfesorAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="844">
+          <caret line="96" column="38" selection-start-line="96" selection-start-column="38" selection-end-line="96" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Adapter/ComentariosAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="68" column="27" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/PuntuacionActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/Ranking/DatosProfesorActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="118" column="10" selection-start-line="118" selection-start-column="10" selection-end-line="118" selection-end-column="10" />
+          <folding>
+            <element signature="e#1528#1739#0" expanded="true" />
+            <element signature="e#1738#1739#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_comentario.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
+          <folding>
+            <element signature="e#1590#1608#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_datos_profesor.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        <state relative-caret-position="367">
+          <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
   </component>

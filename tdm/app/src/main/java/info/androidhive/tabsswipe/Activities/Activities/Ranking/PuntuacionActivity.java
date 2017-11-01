@@ -18,10 +18,13 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import info.androidhive.tabsswipe.Activities.Dao.ComentarioDao;
+import info.androidhive.tabsswipe.Activities.Dao.ProfesorDao;
 import info.androidhive.tabsswipe.Activities.Entities.Comentario;
+import info.androidhive.tabsswipe.Activities.Entities.Profesor;
 import info.androidhive.tabsswipe.R;
 
 /**
@@ -93,6 +96,14 @@ public class PuntuacionActivity extends Activity {
         comentario.setFecha(new Date());
 
         int resultado = comentarioDao.insertarComentario(comentario);
+        List<Comentario> comentarioList=comentarioDao.obtenerComentariosPorProfesor(_idProfe);
+        Profesor profesor= new Profesor();
+        profesor.setId_profesor(_idProfe);
+        String puntos=profesor.calcularPuntuacion(comentarioList);
+        ProfesorDao profesorDao= new ProfesorDao(this);
+        profesorDao.ActualizarPuntaje(Float.parseFloat(puntos),_idProfe);
+
+
 
 
         if (resultado > 0) {

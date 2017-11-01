@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#96C9CA"
+    android:background="#cfd8dc"
     android:orientation="vertical">
 
     <TextView
@@ -36,7 +36,8 @@
     <EditText
         android:id="@+id/txtComentario"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="@string/escribir_comentario"/>
 
     <Button
         android:id="@+id/btnEnviar"

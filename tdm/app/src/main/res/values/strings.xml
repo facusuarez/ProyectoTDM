@@ -9,4 +9,5 @@
     <string name="comentarios">comentarios </string>
     <string name="enviar">Enviar </string>
     <string name="estrella"> estrellas</string>
+    <string name="escribir_comentario">Escribe un comentario</string>
 </resources>

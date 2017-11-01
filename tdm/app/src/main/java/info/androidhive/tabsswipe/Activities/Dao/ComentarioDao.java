@@ -62,7 +62,6 @@ public class ComentarioDao {
             Comentario comentario ;
             int indexDescripcion;
             int indexPuntaje;
-            int indexID;
             int indexProfesor;
             int indexFecha;
             comentarios = new ArrayList<Comentario>();
@@ -70,7 +69,6 @@ public class ComentarioDao {
             indexFecha = cursor.getColumnIndex("fecha_hora");
             indexProfesor = cursor.getColumnIndex("id_profesor");
             indexPuntaje = cursor.getColumnIndex("puntos");
-            indexID = cursor.getColumnIndex("id_comentario");
             while (cursor.moveToNext()) {
                 comentario = new Comentario();
 

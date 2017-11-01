@@ -57,5 +57,12 @@ public class RankingFragment extends ListFragment {
 
     }
 
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        ProfesorDao profesorDao = new ProfesorDao(getActivity());
+        List<Profesor> listaProfesores = profesorDao.obtenerProfesores();
+        _adapter.setLista(listaProfesores);
+        setListAdapter(_adapter);
+    }
 }

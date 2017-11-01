@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import info.androidhive.tabsswipe.Activities.Dao.ComentarioDao;
+import info.androidhive.tabsswipe.Activities.Entities.Comentario;
 import info.androidhive.tabsswipe.Activities.Entities.Profesor;
 import info.androidhive.tabsswipe.R;
 
@@ -23,10 +25,12 @@ public class ProfesorAdapter extends BaseAdapter {
 
     private ArrayList<Profesor> _profesores;
     private LayoutInflater _inflater;
+    private Context _context;
 
     public ProfesorAdapter(Context context) {
         _profesores = new ArrayList<Profesor>();
         _inflater = LayoutInflater.from(context);
+        _context=context;
     }
 
     public void setProfesores(Set<Profesor> profesores) {
@@ -79,7 +83,8 @@ public class ProfesorAdapter extends BaseAdapter {
         String nombreProfesor = profesor.getApellido()+", "+profesor.getNombre();
         holder.txtNombreProfesor.setText(nombreProfesor);
 
-        holder.txtPuntuacion.setText((position+1)+"");
+
+        holder.txtPuntuacion.setText(profesor.getPuntaje()+"");
 
 
         return view;

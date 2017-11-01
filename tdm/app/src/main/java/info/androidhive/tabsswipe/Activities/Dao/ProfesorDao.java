@@ -38,20 +38,23 @@ public class ProfesorDao {
     public List<Profesor> obtenerProfesores() {
 
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.query("profesores", null, null, null, null, null, null);
+        Cursor cursor = db.query("profesores", null, null, null, null, null, "puntaje desc");
         List<Profesor> profesores = null;
         if (cursor.isBeforeFirst()) {
             Profesor profe = null;
             int indexNombre = -1;
             int indexApellido = -1;
+            int indexPuntaje=-1;
             int indexID = -1;
             profesores = new ArrayList<Profesor>();
             indexNombre = cursor.getColumnIndex("nombre");
+            indexPuntaje=cursor.getColumnIndex("puntaje");
             indexApellido = cursor.getColumnIndex("apellido");
             indexID = cursor.getColumnIndex("id_profesor");
             while (cursor.moveToNext()) {
                 profe = new Profesor();
                 profe.setNombre(cursor.getString(indexNombre));
+                profe.setPuntaje(cursor.getFloat(indexPuntaje));
                 profe.setApellido(cursor.getString(indexApellido));
                 profe.setId_profesor(cursor.getInt(indexID));
                 profesores.add(profe);
@@ -114,11 +117,25 @@ public class ProfesorDao {
         return comisiones;
     }
 
+    //public List<String> ObtenerCatedraComision (int pIDProfesor){
+
+    //}
+
     public long CantidadComentariosPorProfesor (int pIdProfesor){
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         long count =DatabaseUtils.queryNumEntries(db,"comentario","id_profesor=?",new String[] {pIdProfesor+""});
         db.close();
         return count;
+    }
+
+    public int ActualizarPuntaje(float pPuntaje, int pIDProfe){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        int filas;
+        ContentValues cv=new ContentValues();
+        cv.put("puntaje",pPuntaje);
+        //db.execSQL("UPDATE profesores SET puntaje="+pPuntaje+" WHERE id_profesor=?",new Object[]{pIDProfe});
+        filas=db.update("profesores", cv,"id_profesor=?",new String[]{pIDProfe+""});
+        return filas;
     }
 
 }

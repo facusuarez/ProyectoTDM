@@ -1,19 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-android:background="#ff8400" >
+<?xml version="1.0" encoding="UTF-8"?>
 
-<TextView android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:text="Design Games Screen"
-    android:textSize="20dp"
-    android:layout_centerInParent="true"/>
-<SearchView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    ></SearchView>
 
-</RelativeLayout>
+    <LinearLayout android:background="#E6E6E6" android:orientation="vertical" android:layout_height="match_parent"
+    android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<EditText
+        android:id="@+id/search"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />-->
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:hint="Buscá un Profesor"
+        android:drawableRight="@drawable/ic_search_black_48dp"> <requestFocus /></EditText>
+
+
+
+
+
+    <!--<ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />-->
+   <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@id/android:list">
+
+    </ListView>
+
+    <TextView android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/empty1"
+        android:gravity="center" android:text="No se encontraron Resultados" android:visibility="gone"
+        android:fontFamily="Arial"
+        android:typeface="serif"
+        android:textSize="27sp"/>
+
+    <TextView android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/empty2"
+        android:gravity="center"
+        android:fontFamily="Arial"
+        android:typeface="serif"
+        android:textSize="27sp"
+        android:drawableTop="@drawable/ic_emptyicon"
+        android:drawablePadding = "0sp"
+        android:paddingBottom="110sp"
+        android:paddingTop="0sp"
+        android:text="!Bienvenido Futuro Ingeniero! \n Aquí encontrarás los mejores \n profesores por materia"/>
+
+</LinearLayout>

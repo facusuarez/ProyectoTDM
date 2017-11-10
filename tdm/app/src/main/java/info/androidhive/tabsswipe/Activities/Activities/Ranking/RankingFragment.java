@@ -8,10 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
+import java.net.URL;
 import java.util.List;
 
 import info.androidhive.tabsswipe.Activities.Activities.Adapter.ProfesorAdapter;
@@ -23,7 +20,7 @@ import info.androidhive.tabsswipe.R;
 
 public class RankingFragment extends ListFragment {
 
-
+    private static final String URL_PROFESORES="http://www.masterlist.somee.com/WebService.asmx/getProfesores";
     private ProfesorAdapter _adapter;
 
     @Override
@@ -55,18 +52,19 @@ public class RankingFragment extends ListFragment {
 
         });
 
-        ProfesorDao profesorDao = new ProfesorDao(getActivity());
-        List<Profesor> listaProfesores = profesorDao.obtenerProfesores();
-        _adapter.setLista(listaProfesores);
-        setListAdapter(_adapter);
+        mostrarListViewProfesores();
     }
 
     @Override
     public void onResume() {
         super.onResume();
 
+        mostrarListViewProfesores();
+    }
+
+    private void mostrarListViewProfesores() {
         JsonReader reader = new JsonReader(getActivity());
-        reader.execute();
+        reader.execute(URL_PROFESORES);
 
         ProfesorDao profesorDao = new ProfesorDao(getActivity());
 
@@ -74,4 +72,6 @@ public class RankingFragment extends ListFragment {
         _adapter.setLista(listaProfesores);
         setListAdapter(_adapter);
     }
+
+
 }

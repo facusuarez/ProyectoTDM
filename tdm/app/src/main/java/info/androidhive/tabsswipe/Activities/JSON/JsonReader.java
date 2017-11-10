@@ -27,26 +27,22 @@ import info.androidhive.tabsswipe.Activities.Entities.Profesor;
  * Created by USUARIO on 09/11/2017.
  */
 
-public class JsonReader extends AsyncTask<Void, Void, Void> {
-    private String output;
-    private String outputData;
+public class JsonReader extends AsyncTask<String, Void, JSONObject> {
     private Exception error;
-    private JSONObject json;
     private Context context;
 
 
     public JsonReader(Context context) {
-        this.output = output;
         this.context = context;
-        json = null;
     }
 
     @Override
-    protected Void doInBackground(Void... params) {
+    protected JSONObject doInBackground(String... params) {
 
+        String outputData;
         try {
             HttpClient client = new DefaultHttpClient();
-            HttpUriRequest request = new HttpGet("https://api.myjson.com/bins/1hjn9r");
+            HttpUriRequest request = new HttpGet(params[0]);
             HttpResponse response = client.execute(request);
             StatusLine statusLine = response.getStatusLine();
             int statusCode = statusLine.getStatusCode();
@@ -62,10 +58,9 @@ public class JsonReader extends AsyncTask<Void, Void, Void> {
                 }
                 outputData = builder.toString();
                 try {
-                    json = new JSONObject(outputData);
-
-
+                    return new JSONObject(outputData);
                 } catch (JSONException e) {
+                    error = e;
                 }
             } else {
                 throw new Exception("Status code != 200: " + statusCode);
@@ -82,19 +77,17 @@ public class JsonReader extends AsyncTask<Void, Void, Void> {
         if (count == 0) {
             for (int i = 0; i < jsonArray.length(); i++) {
                 Profesor p = new Profesor();
-                p.setId_profesor(jsonArray.getJSONObject(i).getInt("id"));
+                p.setId_profesor(jsonArray.getJSONObject(i).getInt("id_profesor"));
                 p.setNombre(jsonArray.getJSONObject(i).getString("nombre"));
                 p.setApellido(jsonArray.getJSONObject(i).getString("apellido"));
                 p.setPuntaje(jsonArray.getJSONObject(i).getDouble("puntaje"));
-                double d = jsonArray.getJSONObject(i).getDouble("puntaje");
-                double b = p.getPuntaje();
                 profesorDao.insertProfesor(p);
             }
         } else {
-            List<Profesor> profesorList=new ArrayList<Profesor>();
+            List<Profesor> profesorList = new ArrayList<Profesor>();
             for (int i = 0; i < jsonArray.length(); i++) {
                 Profesor p = new Profesor();
-                p.setId_profesor(jsonArray.getJSONObject(i).getInt("id"));
+                p.setId_profesor(jsonArray.getJSONObject(i).getInt("id_profesor"));
                 p.setPuntaje(jsonArray.getJSONObject(i).getDouble("puntaje"));
                 profesorList.add(p);
             }
@@ -103,13 +96,12 @@ public class JsonReader extends AsyncTask<Void, Void, Void> {
     }
 
     @Override
-    protected void onPostExecute(Void result) {
+    protected void onPostExecute(JSONObject result) {
         if (error == null) {
-            output = outputData;
             try {
-                parseJSON(json.getJSONArray("Profesores"));
+                parseJSON(result.getJSONArray("Table"));
             } catch (Exception e) {
-                String a =e.getMessage();
+                String a = e.getMessage();
             }
             //  output.setText(outputData);
         } else {

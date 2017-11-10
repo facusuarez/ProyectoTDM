@@ -32,6 +32,7 @@
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/google-services/debug" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/debug" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/debug" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/debug" isTestSource="true" generated="true" />
@@ -103,7 +104,16 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 18 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="support-v4-18.0.0" level="project" />
+    <orderEntry type="library" exported="" name="firebase-iid-9.0.0" level="project" />
+    <orderEntry type="library" exported="" name="firebase-analytics-impl-9.0.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-basement-9.0.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-tasks-9.0.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-base-9.0.0" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-23.0.0" level="project" />
+    <orderEntry type="library" exported="" name="firebase-common-9.0.0" level="project" />
+    <orderEntry type="library" exported="" name="firebase-core-9.0.0" level="project" />
+    <orderEntry type="library" exported="" name="firebase-analytics-9.0.0" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-23.0.0" level="project" />
     <orderEntry type="library" exported="" name="android-android-18" level="project" />
   </component>
 </module>

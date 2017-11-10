@@ -21,3 +21,4 @@ android {
 dependencies {
     compile 'com.android.support:support-v4:18.0.0'
 }
+apply plugin: 'com.google.gms.google-services'

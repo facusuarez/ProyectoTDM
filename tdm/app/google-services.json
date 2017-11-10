@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "914051984812",
+    "firebase_url": "https://master-list-ce1df.firebaseio.com",
+    "project_id": "master-list-ce1df",
+    "storage_bucket": "master-list-ce1df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914051984812:android:9df2b7bcb45fd03e",
+        "android_client_info": {
+          "package_name": "info.androidhive.tabsswipe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914051984812-pmrtf5b7mqsuuqoqvd3ki9no8ovlre5h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd0xAG0EUz-6JuFPJaqNdH__PIP53AmUw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

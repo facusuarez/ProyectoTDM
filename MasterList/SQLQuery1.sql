@@ -1,0 +1,6 @@
+﻿CREATE TABLE profesores (id_profesor INTEGER PRIMARY KEY IDENTITY(1,1), nombre TEXT NOT NULL,apellido TEXT NOT NULL,puntaje FLOAT)
+CREATE TABLE comisiones (id_comision INTEGER PRIMARY KEY IDENTITY(1,1), nombre TEXT NOT NULL)
+CREATE TABLE catedras (id_catedra INTEGER PRIMARY KEY IDENTITY(1,1), nombre TEXT NOT NULL)CREATE TABLE usuarios (id_usuario INTEGER PRIMARY KEY IDENTITY(1,1), nombre TEXT NOT NULL,password TEXT NOT NULL)
+CREATE TABLE profe_catedra_comision (id INTEGER PRIMARY KEY IDENTITY(1,1), id_profesor INTEGER NOT NULL,id_catedra INTEGER NOT NULL,id_comision INTEGER NOT NULL, FOREIGN KEY (id_profesor) REFERENCES profesores(id_profesor),FOREIGN KEY (id_comision) REFERENCES comisiones(id_comision),FOREIGN KEY (id_catedra) REFERENCES catedras(id_catedra))
+CREATE TABLE comentario (id_comentario INTEGER PRIMARY KEY IDENTITY(1,1), id_profesor INTEGER NOT NULL,descripcion TEXT NOT NULL,puntos FLOAT NOT NULL,fecha_hora TEXT NOT NULL,id_usuario INTEGER NOT NULL, FOREIGN KEY (id_profesor) REFERENCES profesores(id_profesor),FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario))
+CREATE TABLE profesores_favoritos (id_favorito INTEGER PRIMARY KEY IDENTITY(1,1), id_profesor INTEGER NOT NULL,id_usuario INTEGER NOT NULL, FOREIGN KEY (id_profesor) REFERENCES profesores(id_profesor),FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario))

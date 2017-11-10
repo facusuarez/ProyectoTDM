@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Holis</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Profesores</h1>
+
+
+    <p id="demo"></p>
+
+    <script>
+        $(document).ready(function () {
+            //debugger;
+            $.ajax({
+                type: "POST",
+                url: "WebService.asmx/getProfesores",
+                data: JSON.stringify({id:2,puntaje:2.20}),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                beforeSend: function (request) {
+                    request.setRequestHeader("Access-Control-Allow-Origin", '*');
+                },
+                success: function (msg) {
+                    alert(msg.d);
+                },
+                error: function (msg) {
+                    alert(msg.d);
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

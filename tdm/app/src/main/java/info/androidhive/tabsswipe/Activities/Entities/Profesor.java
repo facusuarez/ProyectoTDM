@@ -11,9 +11,9 @@ public class Profesor {
     private String nombre;
     private String apellido;
     private int id_profesor;
-    private float puntaje;
+    private double puntaje;
 
-    public Profesor(String nombre, String apellido, int id_profesor, float puntaje) {
+    public Profesor(String nombre, String apellido, int id_profesor, double puntaje) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.id_profesor = id_profesor;
@@ -23,11 +23,11 @@ public class Profesor {
     public Profesor() {
     }
 
-    public float getPuntaje() {
+    public double getPuntaje() {
         return puntaje;
     }
 
-    public void setPuntaje(float puntaje) {
+    public void setPuntaje(double puntaje) {
         this.puntaje = puntaje;
     }
 

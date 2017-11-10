@@ -11,14 +11,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
-import info.androidhive.tabsswipe.Activities.Dao.ComentarioDao;
-import info.androidhive.tabsswipe.Activities.Entities.Comentario;
 import info.androidhive.tabsswipe.Activities.Entities.Profesor;
 import info.androidhive.tabsswipe.R;
 
-import java.util.Locale;
 /**
  * Created by USUARIO on 10/10/2017.
  */
@@ -29,15 +27,16 @@ public class ProfesorAdapter extends BaseAdapter {
     private LayoutInflater _inflater;
     private Context _context;
     private List<Profesor> _proflist = null;
-   /* private ValueFilter valueFilter;*/
+    /* private ValueFilter valueFilter;*/
     ArrayList<Profesor> mOriginalValues;
 
     public ProfesorAdapter(Context context) {
         _profesores = new ArrayList<Profesor>();
         _inflater = LayoutInflater.from(context);
-        _context=context;
+        _context = context;
     }
-    public ProfesorAdapter(Context context,List<Profesor> proflist ) {
+
+    public ProfesorAdapter(Context context, List<Profesor> proflist) {
         this._proflist = proflist;
         _profesores = new ArrayList<Profesor>();
         _inflater = LayoutInflater.from(context);
@@ -58,28 +57,23 @@ public class ProfesorAdapter extends BaseAdapter {
         return profesor;
     }
 
-    public Filter getFilter()
-    {
-        Filter filter = new Filter()
-        {
+    public Filter getFilter() {
+        Filter filter = new Filter() {
 
             @SuppressWarnings("unchecked")
             @Override
-            protected void publishResults(CharSequence constraint,FilterResults results)
-            {
+            protected void publishResults(CharSequence constraint, FilterResults results) {
 
                 _profesores = (ArrayList<Profesor>) results.values; // has the filtered values
                 notifyDataSetChanged();  // notifies the data with new filtered values
             }
 
             @Override
-            protected FilterResults performFiltering(CharSequence constraint)
-            {
+            protected FilterResults performFiltering(CharSequence constraint) {
                 FilterResults results = new FilterResults();        // Holds the results of a filtering operation in values
                 ArrayList<Profesor> FilteredArrList = new ArrayList<Profesor>();
 
-                if (mOriginalValues == null)
-                {
+                if (mOriginalValues == null) {
                     System.out.println("");
                     mOriginalValues = new ArrayList<Profesor>(_profesores); // saves the original data in mOriginalValues
                 }
@@ -90,22 +84,17 @@ public class ProfesorAdapter extends BaseAdapter {
                  *  else does the Filtering and returns FilteredArrList(Filtered)
                  *
                  ********/
-                if (constraint == null || constraint.length() == 0)
-                {
+                if (constraint == null || constraint.length() == 0) {
 
                     // set the Original result to return
                     results.count = mOriginalValues.size();
                     results.values = mOriginalValues;
 
-                }
-                else
-                {
+                } else {
                     constraint = constraint.toString().toLowerCase();
-                    for (int i = 0; i < mOriginalValues.size(); i++)
-                    {
+                    for (int i = 0; i < mOriginalValues.size(); i++) {
                         Profesor data = mOriginalValues.get(i);
-                        if (data.getApellido().toLowerCase().startsWith(constraint.toString()))
-                        {
+                        if (data.getApellido().toLowerCase().startsWith(constraint.toString())) {
                             FilteredArrList.add(data);
                         }
                     }
@@ -153,12 +142,11 @@ public class ProfesorAdapter extends BaseAdapter {
         Profesor profesor = _profesores.get(position);
 
         //holder.iconCountry.setImageResource(profesor.getFlagImage());
-        String nombreProfesor = profesor.getApellido()+", "+profesor.getNombre();
+        String nombreProfesor = profesor.getApellido() + ", " + profesor.getNombre();
         holder.txtNombreProfesor.setText(nombreProfesor);
 
-
-        holder.txtPuntuacion.setText(profesor.getPuntaje()+"");
-
+        double puntaje = profesor.getPuntaje();
+        holder.txtPuntuacion.setText(String.format("%.2f", puntaje));
 
         return view;
 
@@ -175,6 +163,7 @@ public class ProfesorAdapter extends BaseAdapter {
         //ImageView iconBigPopulation;
         TextView txtNombreProfesor;
     }
+
     public void filter(String charText) {
         charText = charText.toLowerCase(Locale.getDefault());
         _proflist.clear();

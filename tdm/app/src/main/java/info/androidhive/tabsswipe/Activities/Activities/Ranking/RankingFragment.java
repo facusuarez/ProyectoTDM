@@ -8,11 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import info.androidhive.tabsswipe.Activities.Activities.Adapter.ProfesorAdapter;
 import info.androidhive.tabsswipe.Activities.Dao.ProfesorDao;
 import info.androidhive.tabsswipe.Activities.Entities.Profesor;
+import info.androidhive.tabsswipe.Activities.JSON.JsonReader;
 import info.androidhive.tabsswipe.R;
 
 
@@ -44,7 +49,7 @@ public class RankingFragment extends ListFragment {
 
                 Intent i = new Intent(getActivity(), DatosProfesorActivity.class);
                 i.putExtra("nombreProfe", profesor.getApellido() + ", " + profesor.getNombre());
-                i.putExtra("idProfe",profesor.getId_profesor());
+                i.putExtra("idProfe", profesor.getId_profesor());
                 startActivity(i);
             }
 
@@ -54,13 +59,17 @@ public class RankingFragment extends ListFragment {
         List<Profesor> listaProfesores = profesorDao.obtenerProfesores();
         _adapter.setLista(listaProfesores);
         setListAdapter(_adapter);
-
     }
 
     @Override
     public void onResume() {
         super.onResume();
+
+        JsonReader reader = new JsonReader(getActivity());
+        reader.execute();
+
         ProfesorDao profesorDao = new ProfesorDao(getActivity());
+
         List<Profesor> listaProfesores = profesorDao.obtenerProfesores();
         _adapter.setLista(listaProfesores);
         setListAdapter(_adapter);

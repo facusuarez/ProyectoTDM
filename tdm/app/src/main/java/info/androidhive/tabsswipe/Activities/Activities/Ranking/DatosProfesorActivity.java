@@ -14,9 +14,7 @@ import java.util.List;
 import info.androidhive.tabsswipe.Activities.Activities.Adapter.ComentariosAdapter;
 import info.androidhive.tabsswipe.Activities.Dao.ComentarioDao;
 import info.androidhive.tabsswipe.Activities.Dao.ProfesorDao;
-import info.androidhive.tabsswipe.Activities.Entities.Catedra;
 import info.androidhive.tabsswipe.Activities.Entities.Comentario;
-import info.androidhive.tabsswipe.Activities.Entities.Comision;
 import info.androidhive.tabsswipe.R;
 
 /**
@@ -72,18 +70,11 @@ public class DatosProfesorActivity extends ListActivity {
         ProfesorDao profesorDao = new ProfesorDao(this);
 
         TextView tvMaterias = (TextView) findViewById(R.id.lblMaterias);
-        List<Catedra> catedras = profesorDao.ObtenerCatedrasPorProfesor(_idProfe);
-        for (int i = 0; i < catedras.size(); i++) {
-            if (i == 0) tvMaterias.setText(" " + catedras.get(i).getNombre());
-            else tvMaterias.setText(tvMaterias.getText() + "\n" + catedras.get(i).getNombre());
-        }
 
-        TextView tvComisiones = (TextView) findViewById(R.id.lblComisiones);
-        List<Comision> comisiones = profesorDao.ObtenerComisionesPorProfesor(_idProfe);
-        for (int i = 0; i < comisiones.size(); i++) {
-            if (i == 0) tvComisiones.setText(" " + comisiones.get(i).getNombre());
-            else
-                tvComisiones.setText(tvComisiones.getText() + " - " + comisiones.get(i).getNombre());
+        List<String> datosProfesor = profesorDao.ObtenerCatedraComisionPorProfesor(_idProfe);
+        for (int i = 0;i<datosProfesor.size();i++){
+            if (i==0) tvMaterias.setText(" "+datosProfesor.get(i));
+            else tvMaterias.setText(tvMaterias.getText()+"\n "+datosProfesor.get(i));
         }
 
         actualizarComentarios(profesorDao);

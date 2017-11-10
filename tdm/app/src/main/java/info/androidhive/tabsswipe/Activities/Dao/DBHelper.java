@@ -21,7 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE \"profesores\" (\"id_profesor\" INTEGER PRIMARY KEY AUTOINCREMENT,\"nombre\" TEXT NOT NULL,\"apellido\" TEXT NOT NULL,\"puntaje\" FLOAT)");
+        db.execSQL("CREATE TABLE \"profesores\" (\"id_profesor\" INTEGER PRIMARY KEY AUTOINCREMENT,\"nombre\" TEXT NOT NULL,\"apellido\" TEXT NOT NULL,\"puntaje\" DOUBLE)");
         db.execSQL("CREATE TABLE \"comisiones\" (\"id_comision\" INTEGER PRIMARY KEY AUTOINCREMENT,\"nombre\" TEXT NOT NULL)");
         db.execSQL("CREATE TABLE \"catedras\" (\"id_catedra\" INTEGER PRIMARY KEY AUTOINCREMENT,\"nombre\" TEXT NOT NULL)");
         db.execSQL("CREATE TABLE \"usuarios\" (\"id_usuario\" INTEGER PRIMARY KEY AUTOINCREMENT,\"nombre\" TEXT NOT NULL,\"password\" TEXT NOT NULL)");
@@ -29,7 +29,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE \"comentario\" (\"id_comentario\" INTEGER PRIMARY KEY AUTOINCREMENT,\"id_profesor\" INTEGER NOT NULL,\"descripcion\" TEXT NOT NULL,\"puntos\" FLOAT NOT NULL,\"fecha_hora\" TEXT NOT NULL,\"id_usuario\" INTEGER NOT NULL, FOREIGN KEY (id_profesor) REFERENCES profesores(id_profesor),FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario))");
         //db.execSQL("CREATE TABLE \"puntuacion\" (\"id_puntuacion\" INTEGER PRIMARY KEY AUTOINCREMENT,\"id_profesor\" INTEGER NOT NULL,\"puntos\" INTEGER NOT NULL,\"fecha_hora\" DATETIME NOT NULL,\"id_usuario\" INTEGER NOT NULL, FOREIGN KEY (id_profesor) REFERENCES profesores(id_profesor),FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario))");
         db.execSQL("CREATE TABLE \"profesores_favoritos\" (\"id_favorito\" INTEGER PRIMARY KEY AUTOINCREMENT,\"id_profesor\" INTEGER NOT NULL,\"id_usuario\" INTEGER NOT NULL, FOREIGN KEY (id_profesor) REFERENCES profesores(id_profesor),FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario))");
-        cargarDatosIniciales(db);
+        //cargarDatosIniciales(db);
     }
 
     private void cargarDatosIniciales(SQLiteDatabase db) {
@@ -48,17 +48,17 @@ public class DBHelper extends SQLiteOpenHelper {
         db.insert("profesores", null, values);
         values.clear();
 
-        values.put("nombre","4K1");//id 1
-        db.insert("comisiones",null,values);
+        values.put("nombre", "4K1");//id 1
+        db.insert("comisiones", null, values);
         values.clear();
-        values.put("nombre","4K4");//id 2
-        db.insert("comisiones",null,values);
+        values.put("nombre", "4K4");//id 2
+        db.insert("comisiones", null, values);
         values.clear();
-        values.put("nombre","1K1");//id 3
-        db.insert("comisiones",null,values);
+        values.put("nombre", "1K1");//id 3
+        db.insert("comisiones", null, values);
         values.clear();
-        values.put("nombre","2K2");//id 4
-        db.insert("comisiones",null,values);
+        values.put("nombre", "2K2");//id 4
+        db.insert("comisiones", null, values);
         values.clear();
 
         values.put("nombre", "Redes de Información");//id 1
@@ -97,6 +97,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.insert("usuarios", null, values);
         values.clear();
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {

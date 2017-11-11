@@ -3,23 +3,35 @@ package info.androidhive.tabsswipe.Activities.Activities.Ranking;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import info.androidhive.tabsswipe.Activities.Dao.ComentarioDao;
 import info.androidhive.tabsswipe.Activities.Dao.ProfesorDao;
@@ -87,7 +99,7 @@ public class PuntuacionActivity extends Activity {
         EditText etDescripcion = (EditText) findViewById(R.id.txtComentario);
         String descripcion = etDescripcion.getText().toString();
         ComentarioDao comentarioDao = new ComentarioDao(this);
-        Comentario comentario = new Comentario();
+        final Comentario comentario = new Comentario();
         comentario.setDescripcion(descripcion);
         comentario.setPuntaje(_ratingBar.getRating());
         comentario.setId_profesor(_idProfe);
@@ -118,7 +130,40 @@ public class PuntuacionActivity extends Activity {
                 }
             });
             dialogBuilder.create().show();
+            RequestQueue queue = Volley.newRequestQueue(this);
+            String url = "http://www.masterlist.somee.com/WebService.asmx/UpdatePuntaje";
+            final Context a = this;
+            StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                    new Response.Listener<String>()
+                    {
+                        @Override
+                        public void onResponse(String response) {
+                            // response
+                            Toast.makeText(a,response, Toast.LENGTH_LONG).show();
 
+                        }
+                    },
+                    new Response.ErrorListener()
+                    {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // error
+                            Toast.makeText(a,error.getMessage(), Toast.LENGTH_LONG).show();
+                            Log.d("Error.Response", error.getMessage());
+                        }
+                    }
+            ) {
+                @Override
+                protected Map<String, String> getParams()
+                {
+                    Map<String, String>  params = new HashMap<String, String>();
+                    params.put("id", _idProfe+"");
+                    params.put("puntaje", comentario.getPuntaje()+"");
+
+                    return params;
+                }
+            };
+            queue.add(postRequest);
         }
     }
 

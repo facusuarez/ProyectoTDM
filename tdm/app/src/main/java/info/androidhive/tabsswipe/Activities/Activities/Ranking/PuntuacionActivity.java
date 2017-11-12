@@ -2,41 +2,25 @@ package info.androidhive.tabsswipe.Activities.Activities.Ranking;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
-import java.util.Map;
 
 import info.androidhive.tabsswipe.Activities.Dao.ComentarioDao;
 import info.androidhive.tabsswipe.Activities.Dao.ProfesorDao;
 import info.androidhive.tabsswipe.Activities.Entities.Comentario;
 import info.androidhive.tabsswipe.Activities.Entities.Profesor;
+import info.androidhive.tabsswipe.Activities.JSON.JsonPostUpdatePuntaje;
 import info.androidhive.tabsswipe.R;
 
 /**
@@ -48,6 +32,8 @@ public class PuntuacionActivity extends Activity {
     private int _idProfe;
     private TextView _tvProfe;
     private TextView _tvPuntos;
+    private final static String URL_UPDATE_PUNTAJE = "http://www.masterlist.somee.com/WebService.asmx/UpdatePuntaje";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +44,8 @@ public class PuntuacionActivity extends Activity {
 
         LayerDrawable stars = (LayerDrawable) _ratingBar.getProgressDrawable();
         stars.getDrawable(2).setColorFilter(Color.parseColor("#0521F9"), PorterDuff.Mode.SRC_ATOP);
-        _tvProfe= (TextView) findViewById(R.id.lblNombreProfesor);
-        _tvPuntos= (TextView) findViewById(R.id.lblPuntuacion);
+        _tvProfe = (TextView) findViewById(R.id.lblNombreProfesor);
+        _tvPuntos = (TextView) findViewById(R.id.lblPuntuacion);
         mostrarDatos();
 
         Button btnEnviar = (Button) findViewById(R.id.btnEnviar);
@@ -74,7 +60,7 @@ public class PuntuacionActivity extends Activity {
         _ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                _tvPuntos.setText(_ratingBar.getRating()+"");
+                _tvPuntos.setText(_ratingBar.getRating() + "");
             }
         });
     }
@@ -86,11 +72,11 @@ public class PuntuacionActivity extends Activity {
         if (extras != null) {
             rating = extras.getFloat("rating");
             _idProfe = extras.getInt("idProfe");
-            profe= extras.getString("nombreProfe");
+            profe = extras.getString("nombreProfe");
         }
         _ratingBar.setRating(rating);
         _tvProfe.setText(profe);
-        _tvPuntos.setText(rating+"");
+        _tvPuntos.setText(rating + "");
     }
 
     private void enviarComentarios() {
@@ -108,14 +94,12 @@ public class PuntuacionActivity extends Activity {
         comentario.setFecha(new Date());
 
         int resultado = comentarioDao.insertarComentario(comentario);
-        List<Comentario> comentarioList=comentarioDao.obtenerComentariosPorProfesor(_idProfe);
-        Profesor profesor= new Profesor();
+        List<Comentario> comentarioList = comentarioDao.obtenerComentariosPorProfesor(_idProfe);
+        Profesor profesor = new Profesor();
         profesor.setId_profesor(_idProfe);
-        String puntos=profesor.calcularPuntuacion(comentarioList);
-        ProfesorDao profesorDao= new ProfesorDao(this);
-        profesorDao.ActualizarPuntaje(Float.parseFloat(puntos),_idProfe);
-
-
+        String puntos = profesor.calcularPuntuacion(comentarioList);
+        ProfesorDao profesorDao = new ProfesorDao(this);
+        profesorDao.ActualizarPuntaje(Float.parseFloat(puntos), _idProfe);
 
 
         if (resultado > 0) {
@@ -130,40 +114,10 @@ public class PuntuacionActivity extends Activity {
                 }
             });
             dialogBuilder.create().show();
-            RequestQueue queue = Volley.newRequestQueue(this);
-            String url = "http://www.masterlist.somee.com/WebService.asmx/UpdatePuntaje";
-            final Context a = this;
-            StringRequest postRequest = new StringRequest(Request.Method.POST, url,
-                    new Response.Listener<String>()
-                    {
-                        @Override
-                        public void onResponse(String response) {
-                            // response
-                            Toast.makeText(a,response, Toast.LENGTH_LONG).show();
 
-                        }
-                    },
-                    new Response.ErrorListener()
-                    {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            // error
-                            Toast.makeText(a,error.getMessage(), Toast.LENGTH_LONG).show();
-                            Log.d("Error.Response", error.getMessage());
-                        }
-                    }
-            ) {
-                @Override
-                protected Map<String, String> getParams()
-                {
-                    Map<String, String>  params = new HashMap<String, String>();
-                    params.put("id", _idProfe+"");
-                    params.put("puntaje", comentario.getPuntaje()+"");
+            JsonPostUpdatePuntaje post = new JsonPostUpdatePuntaje(this, _idProfe, Float.parseFloat(puntos));
+            post.execute(URL_UPDATE_PUNTAJE);
 
-                    return params;
-                }
-            };
-            queue.add(postRequest);
         }
     }
 

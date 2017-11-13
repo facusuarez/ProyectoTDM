@@ -14,7 +14,7 @@ namespace MasterList
     /// <summary>
     /// Descripción breve de WebService
     /// </summary>
-     //[WebService(Namespace = "http://tempuri.org/")]
+    //[WebService(Namespace = "http://tempuri.org/")]
     [WebService(Namespace = "http://MasterList.somee.com")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
@@ -42,8 +42,38 @@ namespace MasterList
             Context.Response.ContentType = "application/json";
             Context.Response.Write(JsonConvert.SerializeObject(ds, Newtonsoft.Json.Formatting.Indented));
         }
+
         [WebMethod]
-        public void Insert(string nombre, string apellido, float puntaje)
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public void getComentarios()
+        {
+            string sql = "SELECT * FROM comentario";
+
+            SqlDataAdapter da = new SqlDataAdapter(sql, ConfigurationManager.ConnectionStrings["Connection"].ToString());
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            Context.Response.Clear();
+            Context.Response.ContentType = "application/json";
+            Context.Response.Write(JsonConvert.SerializeObject(ds, Newtonsoft.Json.Formatting.Indented));
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public void getProfeCatedraComision(string idProfe)
+        {
+            string sql = "SELECT profesores.*, comisiones.nombre as comision, catedras.nombre  as catedra, catedras.alias  FROM profe_catedra_comision INNER JOIN profesores ON profe_catedra_comision.id_profesor = profesores.id_profesor INNER JOIN comisiones ON comisiones.id_comision = profe_catedra_comision.id_comision  INNER JOIN catedras ON catedras.id_catedra = profe_catedra_comision.id_catedra WHERE profesores.id_profesor=" + idProfe;
+
+            SqlDataAdapter da = new SqlDataAdapter(sql, ConfigurationManager.ConnectionStrings["Connection"].ToString());
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            Context.Response.Clear();
+            Context.Response.ContentType = "application/json";
+            Context.Response.Write(JsonConvert.SerializeObject(ds, Newtonsoft.Json.Formatting.Indented));
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public void InsertProfesor(string nombre, string apellido, float puntaje)
         {
             string constr = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
@@ -57,12 +87,37 @@ namespace MasterList
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();
+                    
                 }
             }
         }
-         [WebMethod]
+        [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public string UpdatePuntaje(string id,string puntaje)
+        public void InsertComentario(int id_profesor, int id_usuario, string descripcion, float puntos)
+        {
+            string constr = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO comentario (id_profesor, id_usuario, descripcion, puntos, fecha_hora) VALUES (@id_profesor, @id_usuario, @descripcion, @puntos, @fecha_hora)"))
+                {
+                    cmd.Parameters.AddWithValue("@id_usuario", id_usuario);
+                    cmd.Parameters.AddWithValue("@id_profesor", id_profesor);
+                    cmd.Parameters.AddWithValue("@puntos", puntos);
+                    cmd.Parameters.AddWithValue("@fecha_hora", DateTime.Now.ToString());
+                    cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                    cmd.Connection = con;
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    Context.Response.Clear();
+                    Context.Response.ContentType = "application/json";
+                    Context.Response.Write("Se agrego el comentario: '" + descripcion+"' con el puntaje: "+puntos);
+                }
+            }
+        }
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public void UpdatePuntaje(string id,string puntaje)
         {
             string constr = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
@@ -75,7 +130,9 @@ namespace MasterList
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();
-                    return "Se actualizo el profesor id: " + id + " con el puntaje: " + puntaje;
+                    Context.Response.Clear();
+                    Context.Response.ContentType = "application/json";
+                    Context.Response.Write("Se actualizo el profesor id: " + id + " con el puntaje: " + puntaje); 
                 }
             }
         }

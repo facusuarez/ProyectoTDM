@@ -45,9 +45,9 @@ namespace MasterList
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public void getComentarios()
+        public void getComentarios(int idProfe)
         {
-            string sql = "SELECT * FROM comentario";
+            string sql = "SELECT * FROM comentario WHERE id_profesor="+idProfe;
 
             SqlDataAdapter da = new SqlDataAdapter(sql, ConfigurationManager.ConnectionStrings["Connection"].ToString());
             DataSet ds = new DataSet();

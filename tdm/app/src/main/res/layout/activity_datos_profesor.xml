@@ -59,31 +59,30 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="10dp"
-        android:padding="10dp"
-        android:layout_gravity="center">
+        android:id="@+id/btnOpinar"
+        android:text="@string/opniar"
+        android:gravity="center"
+        android:layout_gravity="center"/>
 
-        <TextView
-            android:id="@+id/lblCantidadComentarios"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textColor="#929B9B"
-            android:textSize="20sp"/>
-
-
-    </LinearLayout>
-
-    <ListView
+        <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@id/android:list"
         android:layout_marginRight="5sp"
         android:layout_marginLeft="5sp"
         > </ListView>
+
+    <TextView
+        android:id="@id/android:empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sin_comentaris"
+        android:textColor="#929B9B"
+        android:textSize="20sp"
+        android:layout_gravity="center"/>
 
 
 

@@ -14,7 +14,7 @@ public class Comentario {
     private Date fecha;
     private Profesor profesor;
     private int id_profesor;
-    //private Usuario usuario;
+    private int id_usuario;
 
 
     public Comentario() {
@@ -58,5 +58,13 @@ public class Comentario {
 
     public void setProfesor(Profesor profesor) {
         this.profesor = profesor;
+    }
+
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
     }
 }

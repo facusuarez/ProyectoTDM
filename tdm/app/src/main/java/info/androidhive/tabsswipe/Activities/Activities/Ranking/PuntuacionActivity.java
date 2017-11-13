@@ -1,8 +1,6 @@
 package info.androidhive.tabsswipe.Activities.Activities.Ranking;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.LayerDrawable;
@@ -20,6 +18,7 @@ import info.androidhive.tabsswipe.Activities.Dao.ComentarioDao;
 import info.androidhive.tabsswipe.Activities.Dao.ProfesorDao;
 import info.androidhive.tabsswipe.Activities.Entities.Comentario;
 import info.androidhive.tabsswipe.Activities.Entities.Profesor;
+import info.androidhive.tabsswipe.Activities.JSON.JsonPostInsertComentario;
 import info.androidhive.tabsswipe.Activities.JSON.JsonPostUpdatePuntaje;
 import info.androidhive.tabsswipe.R;
 
@@ -33,6 +32,8 @@ public class PuntuacionActivity extends Activity {
     private TextView _tvProfe;
     private TextView _tvPuntos;
     private final static String URL_UPDATE_PUNTAJE = "http://www.masterlist.somee.com/WebService.asmx/UpdatePuntaje";
+    private final static String URL_INSERT_COMENTARIO = "http://www.masterlist.somee.com/WebService.asmx/InsertComentario";
+    private final static String URL_AVG_COMENTARIO = "http://www.masterlist.somee.com/WebService.asmx/getAVGComentarios?idProfe=";
 
 
     @Override
@@ -66,17 +67,17 @@ public class PuntuacionActivity extends Activity {
     }
 
     private void mostrarDatos() {
-        float rating = 0;
+
         String profe = "";
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            rating = extras.getFloat("rating");
+
             _idProfe = extras.getInt("idProfe");
             profe = extras.getString("nombreProfe");
         }
-        _ratingBar.setRating(rating);
+
         _tvProfe.setText(profe);
-        _tvPuntos.setText(rating + "");
+
     }
 
     private void enviarComentarios() {
@@ -89,20 +90,28 @@ public class PuntuacionActivity extends Activity {
         comentario.setDescripcion(descripcion);
         comentario.setPuntaje(_ratingBar.getRating());
         comentario.setId_profesor(_idProfe);
-
-
         comentario.setFecha(new Date());
+        comentario.setId_usuario(1);
 
-        int resultado = comentarioDao.insertarComentario(comentario);
-        List<Comentario> comentarioList = comentarioDao.obtenerComentariosPorProfesor(_idProfe);
+        //int resultado = comentarioDao.insertarComentario(comentario);
+
+        JsonPostInsertComentario post = new JsonPostInsertComentario(this, comentario);
+        post.execute(URL_INSERT_COMENTARIO);
+
+        //calcular puntuacion
+        /*List<Comentario> comentarioList = comentarioDao.obtenerComentariosPorProfesor(_idProfe);
         Profesor profesor = new Profesor();
         profesor.setId_profesor(_idProfe);
         String puntos = profesor.calcularPuntuacion(comentarioList);
         ProfesorDao profesorDao = new ProfesorDao(this);
         profesorDao.ActualizarPuntaje(Float.parseFloat(puntos), _idProfe);
+*/
+
+        JsonPostUpdatePuntaje postUpdatePuntaje = new JsonPostUpdatePuntaje(this, _idProfe);
+        postUpdatePuntaje.execute(URL_UPDATE_PUNTAJE,URL_AVG_COMENTARIO);
 
 
-        if (resultado > 0) {
+        /*if (resultado > 0) {
             final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
             dialogBuilder.setTitle("Info");
             dialogBuilder.setMessage("Comentario enviado");
@@ -114,11 +123,8 @@ public class PuntuacionActivity extends Activity {
                 }
             });
             dialogBuilder.create().show();
-
-            JsonPostUpdatePuntaje post = new JsonPostUpdatePuntaje(this, _idProfe, Float.parseFloat(puntos));
-            post.execute(URL_UPDATE_PUNTAJE);
-
-        }
+        }*/
+        finish();
     }
 
 

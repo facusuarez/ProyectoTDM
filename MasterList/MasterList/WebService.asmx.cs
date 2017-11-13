@@ -59,6 +59,20 @@ namespace MasterList
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public void getAVGComentarios(int idProfe)
+        {
+            string sql = "SELECT AVG(comentario.puntos) FROM comentario WHERE id_profesor=" + idProfe;
+
+            SqlDataAdapter da = new SqlDataAdapter(sql, ConfigurationManager.ConnectionStrings["Connection"].ToString());
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            Context.Response.Clear();
+            Context.Response.ContentType = "application/json";
+            Context.Response.Write(JsonConvert.SerializeObject(ds, Newtonsoft.Json.Formatting.Indented));
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public void getProfeCatedraComision(string idProfe)
         {
             string sql = "SELECT profesores.*, comisiones.nombre as comision, catedras.nombre  as catedra, catedras.alias  FROM profe_catedra_comision INNER JOIN profesores ON profe_catedra_comision.id_profesor = profesores.id_profesor INNER JOIN comisiones ON comisiones.id_comision = profe_catedra_comision.id_comision  INNER JOIN catedras ON catedras.id_catedra = profe_catedra_comision.id_catedra WHERE profesores.id_profesor=" + idProfe;

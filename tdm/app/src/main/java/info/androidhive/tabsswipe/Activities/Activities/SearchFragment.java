@@ -1,5 +1,6 @@
 package info.androidhive.tabsswipe.Activities.Activities;
 
+import android.content.Intent;
 import android.support.v4.app.ListFragment;
 
 import android.content.Context;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -23,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import info.androidhive.tabsswipe.Activities.Activities.Adapter.ProfesorAdapter;
+import info.androidhive.tabsswipe.Activities.Activities.Ranking.DatosProfesorActivity;
 import info.androidhive.tabsswipe.Activities.Dao.ProfesorDao;
 import info.androidhive.tabsswipe.Activities.Entities.Profesor;
 import info.androidhive.tabsswipe.R;
@@ -59,6 +62,20 @@ public class SearchFragment extends ListFragment  {
 
 
         getListView().setEmptyView(getView().findViewById(R.id.empty2));
+        getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1,
+                                    int position, long arg3) {
+                Profesor profesor = adapter.getProfesores(position);
+
+                Intent i = new Intent(getActivity(), DatosProfesorActivity.class);
+                i.putExtra("nombreProfe", profesor.getApellido() + ", " + profesor.getNombre());
+                i.putExtra("idProfe", profesor.getId_profesor());
+                i.putExtra("rating",profesor.getPuntaje());
+                startActivity(i);
+            }
+
+        });
         // Locate the EditText in listview_main.xml
         editsearch = (EditText) getView().findViewById(R.id.search);
         editsearch.addTextChangedListener(new TextWatcher() {

@@ -8,11 +8,13 @@ public class Catedra {
 
     private String nombre;
     private int id_catedra;
+    private String alias;
 
 
-    public Catedra(String nombre, int id_catedra) {
+    public Catedra(String nombre, int id_catedra,String alias) {
         this.nombre = nombre;
         this.id_catedra=id_catedra;
+        this.alias=alias;
     }
 
     public Catedra() {
@@ -33,5 +35,13 @@ public class Catedra {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
 }

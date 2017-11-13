@@ -47,6 +47,7 @@ public class RankingFragment extends ListFragment {
                 Intent i = new Intent(getActivity(), DatosProfesorActivity.class);
                 i.putExtra("nombreProfe", profesor.getApellido() + ", " + profesor.getNombre());
                 i.putExtra("idProfe", profesor.getId_profesor());
+                i.putExtra("rating",profesor.getPuntaje());
                 startActivity(i);
             }
 

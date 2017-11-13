@@ -31,15 +31,10 @@ import info.androidhive.tabsswipe.Activities.Entities.Profesor;
 public class JsonReader extends AsyncTask<String, Void, JSONObject> {
     private Exception error;
     private Context context;
-    private int motivo;
-    private final static String URL_MATERIA = "";
-    private final static String URL_COMISION = "";
-    private final static String URL_PCC = "";
 
 
-    public JsonReader(Context context, int motivo) {
+    public JsonReader(Context context) {
         this.context = context;
-        this.motivo = motivo;
     }
 
     @Override
@@ -88,8 +83,6 @@ public class JsonReader extends AsyncTask<String, Void, JSONObject> {
                 p.setApellido(jsonArray.getJSONObject(i).getString("apellido"));
                 p.setPuntaje(jsonArray.getJSONObject(i).getDouble("puntaje"));
                 profesorDao.insertProfesor(p);
-                JsonReaderMaterias readerMaterias = new JsonReaderMaterias(context);
-                readerMaterias.execute(URL_MATERIA, URL_COMISION, URL_PCC);
             }
         } else {
             List<Profesor> profesorList = new ArrayList<Profesor>();
@@ -107,47 +100,16 @@ public class JsonReader extends AsyncTask<String, Void, JSONObject> {
     protected void onPostExecute(JSONObject result) {
         if (error == null) {
             try {
-                switch (motivo) {
-                    case 1: //profesor
-                        parseJSONProfesor(result.getJSONArray("Table"));
-                        break;
-                    case 2: //comentarios
-                        parseJSONComentario(result.getJSONArray(""));
-                        break;
-                }
+                parseJSONProfesor(result.getJSONArray("Table"));
 
-            } catch (Exception e) {
+            } catch (JSONException e) {
                 Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
             }
-            //  output.setText(outputData);
         } else {
             Toast.makeText(context, error.getMessage(), Toast.LENGTH_LONG).show();
         }
+
     }
 
-    private void parseJSONComentario(JSONArray jsonArray) throws JSONException {
-        ProfesorDao profesorDao = new ProfesorDao(context);
-        long count = profesorDao.HayDatos();
-        if (count == 0) {
-            for (int i = 0; i < jsonArray.length(); i++) {
-                Profesor p = new Profesor();
-                p.setId_profesor(jsonArray.getJSONObject(i).getInt("id_profesor"));
-                p.setNombre(jsonArray.getJSONObject(i).getString("nombre"));
-                p.setApellido(jsonArray.getJSONObject(i).getString("apellido"));
-                p.setPuntaje(jsonArray.getJSONObject(i).getDouble("puntaje"));
-                profesorDao.insertProfesor(p);
-                JsonReaderMaterias readerMaterias = new JsonReaderMaterias(context);
-                readerMaterias.execute(URL_MATERIA, URL_COMISION, URL_PCC);
-            }
-        } else {
-            List<Profesor> profesorList = new ArrayList<Profesor>();
-            for (int i = 0; i < jsonArray.length(); i++) {
-                Profesor p = new Profesor();
-                p.setId_profesor(jsonArray.getJSONObject(i).getInt("id_profesor"));
-                p.setPuntaje(jsonArray.getJSONObject(i).getDouble("puntaje"));
-                profesorList.add(p);
-            }
-            profesorDao.updateProfesor(profesorList);
-        }
-    }
+
 }

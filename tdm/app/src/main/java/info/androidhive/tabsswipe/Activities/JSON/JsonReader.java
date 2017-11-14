@@ -18,6 +18,7 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +32,8 @@ import info.androidhive.tabsswipe.Activities.Entities.Profesor;
 public class JsonReader extends AsyncTask<String, Void, JSONObject> {
     private Exception error;
     private Context context;
+    private final static String URL_UPDATE_PUNTAJE = "http://www.masterlist.somee.com/WebService.asmx/UpdatePuntaje";
+    private final static String URL_AVG_COMENTARIO = "http://www.masterlist.somee.com/WebService.asmx/getAVGComentarios?idProfe=";
 
 
     public JsonReader(Context context) {
@@ -66,13 +69,18 @@ public class JsonReader extends AsyncTask<String, Void, JSONObject> {
             } else {
                 throw new Exception("Status code != 200: " + statusCode);
             }
-        } catch (Exception e) {
+        }catch (UnknownHostException e){
+          //  Toast.makeText(context, "Asegúrese de tener conexión", Toast.LENGTH_LONG).show();
+            error=new UnknownHostException("Asegúrese de tener conexión");
+        }
+        catch (Exception e) {
             error = e;
         }
         return null;
     }
 
     private void parseJSONProfesor(JSONArray jsonArray) throws JSONException {
+
         ProfesorDao profesorDao = new ProfesorDao(context);
         long count = profesorDao.HayDatos();
         if (count == 0) {
@@ -103,10 +111,11 @@ public class JsonReader extends AsyncTask<String, Void, JSONObject> {
                 parseJSONProfesor(result.getJSONArray("Table"));
 
             } catch (JSONException e) {
-                Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(context, error.getMessage(), Toast.LENGTH_LONG).show();
+
+            Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
     }

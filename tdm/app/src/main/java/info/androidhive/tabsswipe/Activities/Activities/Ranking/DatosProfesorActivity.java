@@ -28,6 +28,7 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,7 +61,7 @@ public class DatosProfesorActivity extends ListActivity {
 
 
         _tvMaterias = (TextView) findViewById(R.id.lblMaterias);
-        _btnOpinar= (Button) findViewById(R.id.btnOpinar);
+        _btnOpinar = (Button) findViewById(R.id.btnOpinar);
 
         _rbProfe = (RatingBar) findViewById(R.id.ratingProfe);
         LayerDrawable stars = (LayerDrawable) _rbProfe.getProgressDrawable();
@@ -76,7 +77,7 @@ public class DatosProfesorActivity extends ListActivity {
         mostrarDetalle();
     }
 
-    private void puntuar( ) {
+    private void puntuar() {
         Intent i = new Intent(this, PuntuacionActivity.class);
         i.putExtra("idProfe", _idProfe);
         i.putExtra("nombreProfe", _tvNombre.getText());
@@ -86,14 +87,14 @@ public class DatosProfesorActivity extends ListActivity {
     public void mostrarDetalle() {
         _tvNombre = (TextView) findViewById(R.id.txtNombre);
         String nombreProfe;
-        float rating=0;
+        float rating = 0;
         Bundle extras = getIntent().getExtras();
         if (extras == null) {
             nombreProfe = "Ningún profesor seleccionado";
         } else {
             nombreProfe = extras.getString("nombreProfe");
             _idProfe = extras.getInt("idProfe");
-            rating = (float)extras.getDouble("rating");
+            rating = (float) extras.getDouble("rating");
         }
         _tvNombre.setText(nombreProfe);
         _rbProfe.setRating(rating);
@@ -154,6 +155,9 @@ public class DatosProfesorActivity extends ListActivity {
                 } else {
                     throw new Exception("Status code != 200: " + statusCode);
                 }
+            } catch (UnknownHostException e) {
+                //  Toast.makeText(context, "Asegúrese de tener conexión", Toast.LENGTH_LONG).show();
+                error = new UnknownHostException("Asegúrese de tener conexión");
             } catch (
                     Exception e)
 
@@ -230,6 +234,9 @@ public class DatosProfesorActivity extends ListActivity {
                 }
 
 
+            } catch (UnknownHostException e) {
+                //  Toast.makeText(context, "Asegúrese de tener conexión", Toast.LENGTH_LONG).show();
+                error = new UnknownHostException("Asegúrese de tener conexión");
             } catch (Exception e) {
                 error = e;
             }
@@ -242,10 +249,10 @@ public class DatosProfesorActivity extends ListActivity {
                 try {
                     parseJSONMaterias(result.getJSONArray("Table"));
                 } catch (Exception e) {
-                    Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(context, error.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
 

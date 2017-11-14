@@ -24,6 +24,7 @@ import info.androidhive.tabsswipe.Activities.Entities.Comentario;
 public class JsonPostInsertComentario extends AsyncTask<String, Void, Void>  {
     private Context _context;
     private Comentario _comentario;
+    private final static String URL_AVG_COMENTARIO = "http://www.masterlist.somee.com/WebService.asmx/getAVGComentarios?idProfe=";
 
     public JsonPostInsertComentario(Context context, Comentario comentario) {
         _context = context;
@@ -42,7 +43,7 @@ public class JsonPostInsertComentario extends AsyncTask<String, Void, Void>  {
                     @Override
                     public void onResponse(String response) {
                         // response
-                        Toast.makeText(_context, response, Toast.LENGTH_LONG).show();
+                        Toast.makeText(_context, response, Toast.LENGTH_SHORT).show();
 
                     }
                 },
@@ -50,7 +51,7 @@ public class JsonPostInsertComentario extends AsyncTask<String, Void, Void>  {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // error
-                        Toast.makeText(_context, error.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(_context, error.getMessage(), Toast.LENGTH_SHORT).show();
                         Log.d("Error.Response", error.getMessage());
                     }
                 }
@@ -68,5 +69,11 @@ public class JsonPostInsertComentario extends AsyncTask<String, Void, Void>  {
         };
         queue.add(postRequest);
         return null;
+    }
+
+    @Override
+    protected void onPostExecute(Void aVoid) {
+        JsonReaderGetAVG reader = new JsonReaderGetAVG(_context,_comentario.getId_profesor());
+        reader.execute(URL_AVG_COMENTARIO);
     }
 }

@@ -31,9 +31,7 @@ public class PuntuacionActivity extends Activity {
     private int _idProfe;
     private TextView _tvProfe;
     private TextView _tvPuntos;
-    private final static String URL_UPDATE_PUNTAJE = "http://www.masterlist.somee.com/WebService.asmx/UpdatePuntaje";
     private final static String URL_INSERT_COMENTARIO = "http://www.masterlist.somee.com/WebService.asmx/InsertComentario";
-    private final static String URL_AVG_COMENTARIO = "http://www.masterlist.somee.com/WebService.asmx/getAVGComentarios?idProfe=";
 
 
     @Override
@@ -107,8 +105,8 @@ public class PuntuacionActivity extends Activity {
         profesorDao.ActualizarPuntaje(Float.parseFloat(puntos), _idProfe);
 */
 
-        JsonPostUpdatePuntaje postUpdatePuntaje = new JsonPostUpdatePuntaje(this, _idProfe);
-        postUpdatePuntaje.execute(URL_UPDATE_PUNTAJE,URL_AVG_COMENTARIO);
+        //JsonPostUpdatePuntaje postUpdatePuntaje = new JsonPostUpdatePuntaje(this, _idProfe);
+        //postUpdatePuntaje.execute(URL_UPDATE_PUNTAJE,URL_AVG_COMENTARIO);
 
 
         /*if (resultado > 0) {

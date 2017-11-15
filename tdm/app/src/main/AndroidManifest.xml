@@ -27,7 +27,9 @@
         <activity
             android:name=".Activities.Activities.Ranking.PuntuacionActivity"
             android:label="@string/datos_profesor"></activity>
-
+        <activity
+            android:name=".Activities.Activities.Ranking.MateriasActivity"
+            android:label="@string/datos_profesor"></activity>
     </application>
 
 </manifest>

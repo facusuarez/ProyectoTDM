@@ -50,6 +50,8 @@ public class DatosProfesorActivity extends ListActivity {
     private RatingBar _rbProfe;
     private TextView _tvMaterias;
     private Button _btnOpinar;
+    private Button _btnMaterias;
+    private String _materias;
 
     private final static String URL_COMENTARIO = "http://www.masterlist.somee.com/WebService.asmx/getComentarios?idProfe=";
     private final static String URL_MATERIAS = "http://www.masterlist.somee.com/WebService.asmx/getProfeCatedraComision?idProfe=";
@@ -60,7 +62,6 @@ public class DatosProfesorActivity extends ListActivity {
         setContentView(R.layout.activity_datos_profesor);
 
 
-        _tvMaterias = (TextView) findViewById(R.id.lblMaterias);
         _btnOpinar = (Button) findViewById(R.id.btnOpinar);
 
         _rbProfe = (RatingBar) findViewById(R.id.ratingProfe);
@@ -75,12 +76,28 @@ public class DatosProfesorActivity extends ListActivity {
             }
         });
         mostrarDetalle();
+
+        _btnMaterias= (Button) findViewById(R.id.btnMaterias);
+        _btnMaterias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                abrirMaterias();
+            }
+        });
+
     }
 
     private void puntuar() {
         Intent i = new Intent(this, PuntuacionActivity.class);
         i.putExtra("idProfe", _idProfe);
         i.putExtra("nombreProfe", _tvNombre.getText());
+        startActivity(i);
+    }
+
+    private void abrirMaterias(){
+        Intent i = new Intent(this, MateriasActivity.class);
+        i.putExtra("materias",_materias);
+        i.putExtra("nombreProfe",_tvNombre.getText());
         startActivity(i);
     }
 
@@ -272,8 +289,10 @@ public class DatosProfesorActivity extends ListActivity {
             }
 
             for (int i = 0; i < lista.size(); i++) {
-                if (i == 0) _tvMaterias.setText(" " + lista.get(i));
-                else _tvMaterias.setText(_tvMaterias.getText() + "\n " + lista.get(i));
+                //if (i == 0) _tvMaterias.setText(" " + lista.get(i));
+                //else _tvMaterias.setText(_tvMaterias.getText() + "\n " + lista.get(i));
+                if (i == 0) _materias= lista.get(i);
+                else _materias+="\n" + lista.get(i);
             }
 
         }

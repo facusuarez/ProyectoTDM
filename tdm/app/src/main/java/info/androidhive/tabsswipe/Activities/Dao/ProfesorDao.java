@@ -39,7 +39,7 @@ public class ProfesorDao {
     public List<Profesor> obtenerProfesores() {
 
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.query("profesores", null, null, null, null, null, "puntaje desc");
+        Cursor cursor = db.query("profesores", null, null, null, null, null, "puntaje desc, apellido asc");
         List<Profesor> profesores = null;
         if (cursor.isBeforeFirst()) {
             Profesor profe = null;

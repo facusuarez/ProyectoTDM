@@ -1,5 +1,7 @@
 package info.androidhive.tabsswipe.Activities.Activities.Ranking;
 
+import android.arch.persistence.room.Room;
+import android.content.ContentProvider;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -8,19 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
-import java.net.URL;
 import java.util.List;
 
 import info.androidhive.tabsswipe.Activities.Activities.Adapter.ProfesorAdapter;
-import info.androidhive.tabsswipe.Activities.Dao.ProfesorDao;
+import info.androidhive.tabsswipe.Activities.ConstantesGenerales;
+import info.androidhive.tabsswipe.Activities.Dao.AppDatabase;
 import info.androidhive.tabsswipe.Activities.Entities.Profesor;
-import info.androidhive.tabsswipe.Activities.JSON.JsonReader;
+import info.androidhive.tabsswipe.Activities.JSON.JsonReaderGetProfesores;
 import info.androidhive.tabsswipe.R;
 
 
 public class RankingFragment extends ListFragment {
 
-    private static final String URL_PROFESORES="http://www.masterlist.somee.com/WebService.asmx/getProfesores";
     private ProfesorAdapter _adapter;
 
     @Override
@@ -64,12 +65,16 @@ public class RankingFragment extends ListFragment {
     }
 
     private void mostrarListViewProfesores() {
-        JsonReader reader = new JsonReader(getActivity());
-        reader.execute(URL_PROFESORES);
+        JsonReaderGetProfesores reader = new JsonReaderGetProfesores(getActivity());
+        //reader.execute(ConstantesGenerales.URL_GET_PROFESORES);
+        reader.execute("https://api.myjson.com/bins/1393s8");
 
-        ProfesorDao profesorDao = new ProfesorDao(getActivity());
+        AppDatabase database = Room.databaseBuilder(getActivity(), AppDatabase.class, ConstantesGenerales.DB_NAME)
+                .allowMainThreadQueries()   //Allows room to do operation on main thread
+                .build();
+        database.getProfesorDao().obtenerProfesores();
 
-        List<Profesor> listaProfesores = profesorDao.obtenerProfesores();
+        List<Profesor> listaProfesores = database.getProfesorDao().obtenerProfesores();
         _adapter.setLista(listaProfesores);
         setListAdapter(_adapter);
     }

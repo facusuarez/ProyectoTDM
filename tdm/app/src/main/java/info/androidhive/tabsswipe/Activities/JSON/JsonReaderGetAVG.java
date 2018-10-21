@@ -20,6 +20,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.UnknownHostException;
 
+import info.androidhive.tabsswipe.Activities.ConstantesGenerales;
+
 /**
  * Created by USUARIO on 14/11/2017.
  */
@@ -29,7 +31,6 @@ public class JsonReaderGetAVG extends AsyncTask<String, Void, JSONObject> {
     private int _idProfe;
     private float _puntaje;
     private Exception error;
-    private final static String URL_UPDATE_PUNTAJE = "http://www.masterlist.somee.com/WebService.asmx/UpdatePuntaje";
 
     public JsonReaderGetAVG(Context context, int idProfe) {
         _context = context;
@@ -81,7 +82,7 @@ public class JsonReaderGetAVG extends AsyncTask<String, Void, JSONObject> {
             JSONArray jsonArray = jsonObject.getJSONArray("Table");
             _puntaje = (float) jsonArray.getJSONObject(0).getDouble("Column1");
             JsonPostUpdatePuntaje post = new JsonPostUpdatePuntaje(_context, _idProfe, _puntaje);
-            post.execute(URL_UPDATE_PUNTAJE);
+            post.execute(ConstantesGenerales.URL_UPDATE_PUNTAJE);
         } catch (JSONException e) {
             error = e;
             Toast.makeText(_context,e.getMessage(),Toast.LENGTH_SHORT).show();

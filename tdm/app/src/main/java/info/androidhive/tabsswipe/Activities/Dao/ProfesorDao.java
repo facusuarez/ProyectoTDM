@@ -1,11 +1,17 @@
 package info.androidhive.tabsswipe.Activities.Dao;
 
+import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
+import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.security.Policy;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,10 +22,11 @@ import info.androidhive.tabsswipe.Activities.Entities.Profesor;
 /**
  * Created by USUARIO on 09/10/2017.
  */
+@Dao
+public interface ProfesorDao {
+    //private DBHelper dbHelper;
 
-public class ProfesorDao {
-    private DBHelper dbHelper;
-
+/*
     public ProfesorDao(Context context) {
         dbHelper = new DBHelper(context);
     }
@@ -176,5 +183,28 @@ public class ProfesorDao {
         db.close();
         return result;
     }
+*/
 
+    @Insert
+    void insert(Profesor... profesors);
+
+    @Update
+    void update(Profesor... profesors);
+
+    @Delete
+    void delete(Profesor profesor);
+
+    @Query("SELECT * FROM profesores")
+    List<Profesor> obtenerProfesores();
+
+    @Query("SELECT COUNT(*) FROM profesores")
+    int hayDatos();
+
+    @Query("SELECT * FROM profesores WHERE id_profesor = :idProfesor")
+    Profesor getProfesorById(int idProfesor);
+
+    @Query("SELECT * FROM profesores WHERE apellido LIKE :apellido")
+    List<Profesor> getProfesoresByApellido (String apellido);
 }
+
+

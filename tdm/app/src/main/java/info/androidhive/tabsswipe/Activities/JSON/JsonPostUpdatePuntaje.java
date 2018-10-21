@@ -71,7 +71,8 @@ public class JsonPostUpdatePuntaje extends AsyncTask<String, Void, Void> {
 
     @Override
     protected void onPostExecute(Void aVoid) {
-        ProfesorDao profesorDao = new ProfesorDao(_context);
-        profesorDao.ActualizarPuntaje(_puntaje, _idProfe);
+        //TODO actualizar puntaje del profesor
+        //ProfesorDao profesorDao = new ProfesorDao(_context);
+        //profesorDao.ActualizarPuntaje(_puntaje, _idProfe);
     }
 }

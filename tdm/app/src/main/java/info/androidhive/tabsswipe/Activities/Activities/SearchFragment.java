@@ -1,5 +1,6 @@
 package info.androidhive.tabsswipe.Activities.Activities;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.v4.app.ListFragment;
 
@@ -26,11 +27,13 @@ import java.util.List;
 
 import info.androidhive.tabsswipe.Activities.Activities.Adapter.ProfesorAdapter;
 import info.androidhive.tabsswipe.Activities.Activities.Ranking.DatosProfesorActivity;
+import info.androidhive.tabsswipe.Activities.ConstantesGenerales;
+import info.androidhive.tabsswipe.Activities.Dao.AppDatabase;
 import info.androidhive.tabsswipe.Activities.Dao.ProfesorDao;
 import info.androidhive.tabsswipe.Activities.Entities.Profesor;
 import info.androidhive.tabsswipe.R;
 
-public class SearchFragment extends ListFragment  {
+public class SearchFragment extends ListFragment {
 
     ListView list;
     ProfesorAdapter adapter;
@@ -39,7 +42,7 @@ public class SearchFragment extends ListFragment  {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return  inflater.inflate(R.layout.fragment_search, container, false);
+        return inflater.inflate(R.layout.fragment_search, container, false);
     }
 
     @Override
@@ -60,7 +63,6 @@ public class SearchFragment extends ListFragment  {
         List<Profesor> listaProfesores = profesorDao.obtenerProfesores();*/
 
 
-
         getListView().setEmptyView(getView().findViewById(R.id.empty2));
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -71,7 +73,7 @@ public class SearchFragment extends ListFragment  {
                 Intent i = new Intent(getActivity(), DatosProfesorActivity.class);
                 i.putExtra("nombreProfe", profesor.getApellido() + ", " + profesor.getNombre());
                 i.putExtra("idProfe", profesor.getId_profesor());
-                i.putExtra("rating",profesor.getPuntaje());
+                i.putExtra("rating", profesor.getPuntaje());
                 startActivity(i);
             }
 
@@ -82,11 +84,14 @@ public class SearchFragment extends ListFragment  {
 
             @Override
             public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-                ProfesorDao profesorDao= new ProfesorDao(getActivity());
-                List<Profesor> listaProfesores = profesorDao.obtenerProfesores();
-                adapter = new ProfesorAdapter(getActivity(),listaProfesores);
+                AppDatabase database = Room.databaseBuilder(getActivity(), AppDatabase.class, ConstantesGenerales.DB_NAME)
+                        .allowMainThreadQueries()   //Allows room to do operation on main thread
+                        .build();
+
+                List<Profesor> listaProfesores = database.getProfesorDao().getProfesoresByApellido(arg0 + "%");
+                adapter = new ProfesorAdapter(getActivity(), listaProfesores);
                 setListAdapter(adapter);
-                adapter.getFilter().filter(arg0);
+                //adapter.getFilter().filter(arg0);
                 getListView().setEmptyView(getView().findViewById(R.id.empty1));
             }
 
@@ -98,13 +103,10 @@ public class SearchFragment extends ListFragment  {
 
             @Override
             public void afterTextChanged(Editable arg0) {
-                if (arg0 == null || arg0.length() == 0)
-                {
+                if (arg0 == null || arg0.length() == 0) {
                     getListView().setEmptyView(getView().findViewById(R.id.empty2));
-                   setListAdapter(null);
-
+                    setListAdapter(null);
                 }
-
             }
         });
     }

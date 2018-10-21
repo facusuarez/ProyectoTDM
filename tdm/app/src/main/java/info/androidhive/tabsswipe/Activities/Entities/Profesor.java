@@ -1,18 +1,26 @@
 package info.androidhive.tabsswipe.Activities.Entities;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+
 import java.text.DecimalFormat;
 import java.util.List;
 
 /**
  * Created by USUARIO on 07/10/2017.
  */
-
+@Entity (tableName = "profesores")
 public class Profesor {
     private String nombre;
     private String apellido;
+    @PrimaryKey
+    @NonNull
     private int id_profesor;
     private double puntaje;
 
+    @Ignore
     public Profesor(String nombre, String apellido, int id_profesor, double puntaje) {
         this.nombre = nombre;
         this.apellido = apellido;

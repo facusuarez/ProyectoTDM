@@ -13,4 +13,7 @@
     <string name="opniar">Opinar</string>
     <string name="verMaterias">Ver Materias</string>
     <string name="sin_comentaris">Sin Comentarios</string>
+    <string name="facebook_app_id">2134925633196528</string>
+    <string name="fb_login_protocol_scheme">fb2134925633196528</string>
+
 </resources>

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import java.util.Date;
 import java.util.List;
 
+import info.androidhive.tabsswipe.Activities.ConstantesGenerales;
 import info.androidhive.tabsswipe.Activities.Dao.ComentarioDao;
 import info.androidhive.tabsswipe.Activities.Dao.ProfesorDao;
 import info.androidhive.tabsswipe.Activities.Entities.Comentario;
@@ -31,7 +32,6 @@ public class PuntuacionActivity extends Activity {
     private int _idProfe;
     private TextView _tvProfe;
     private TextView _tvPuntos;
-    private final static String URL_INSERT_COMENTARIO = "http://www.masterlist.somee.com/WebService.asmx/InsertComentario";
 
 
     @Override
@@ -94,7 +94,7 @@ public class PuntuacionActivity extends Activity {
         //int resultado = comentarioDao.insertarComentario(comentario);
 
         JsonPostInsertComentario post = new JsonPostInsertComentario(this, comentario);
-        post.execute(URL_INSERT_COMENTARIO);
+        post.execute(ConstantesGenerales.URL_INSERT_COMENTARIO);
 
         //calcular puntuacion
         /*List<Comentario> comentarioList = comentarioDao.obtenerComentariosPorProfesor(_idProfe);

@@ -2,24 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="30dp"
     android:background="#cfd8dc"
     android:orientation="vertical">
 
     <TextView
+        android:text="HOLA"
         android:id="@+id/txtNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:textSize="70sp"
-        android:gravity="center"/>
+        style="@style/TextAppearance.AppCompat.Caption"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
         android:background="#ffffff"
         android:orientation="horizontal"
-        android:layout_marginBottom="10dp"
-        android:padding="10dp"
-        android:layout_gravity="center">
+        android:padding="10dp">
 
         <RatingBar
             android:id="@+id/ratingProfe"
@@ -35,40 +40,49 @@
     </LinearLayout>
 
 
-
-        <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
         android:id="@+id/btnMaterias"
-        android:text="@string/verMaterias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:gravity="center"
-        android:layout_gravity="center"/>
+        android:text="@string/verMaterias"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:background="@drawable/button_state_list"/>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/btnOpinar"
-        android:text="@string/opniar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:gravity="center"
-        android:layout_gravity="center"/>
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:background="@drawable/button_state_list"
+        android:text="@string/opniar" />
 
-        <ListView
+    <ListView
+        android:id="@id/android:list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@id/android:list"
-        android:layout_marginRight="5sp"
-        android:layout_marginLeft="5sp"
-        > </ListView>
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+    </ListView>
 
     <TextView
         android:id="@id/android:empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="@string/sin_comentaris"
         android:textColor="#929B9B"
-        android:textSize="20sp"
-        android:layout_gravity="center"/>
-
+        android:textSize="20sp" />
 
 
 </LinearLayout>

@@ -135,6 +135,12 @@ public class ProfesorAdapter extends BaseAdapter {
             holder.txtNombreProfesor = (TextView) view
                     .findViewById(R.id.lblNombreProfesor);
             view.setTag(holder);
+
+            if ( position % 2 == 0) {
+                view.setBackgroundResource(R.drawable.listview_selector_even_row);
+            } else {
+                view.setBackgroundResource(R.drawable.listview_selector_odd_row);
+            }
         } else {
             holder = (Holder) view.getTag();
         }
@@ -146,7 +152,7 @@ public class ProfesorAdapter extends BaseAdapter {
         holder.txtNombreProfesor.setText(nombreProfesor);
 
         double puntaje = profesor.getPuntaje();
-        holder.txtPuntuacion.setText(String.format("%.2f", puntaje));
+        holder.txtPuntuacion.setText(String.format(Locale.ENGLISH,"%.1f", puntaje));
 
         return view;
 

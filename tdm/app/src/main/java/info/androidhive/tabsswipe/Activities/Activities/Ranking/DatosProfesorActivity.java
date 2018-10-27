@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import info.androidhive.tabsswipe.Activities.Activities.Adapter.ComentariosAdapter;
+import info.androidhive.tabsswipe.Activities.ConstantesGenerales;
 import info.androidhive.tabsswipe.Activities.Entities.Catedra;
 import info.androidhive.tabsswipe.Activities.Entities.Comentario;
 import info.androidhive.tabsswipe.Activities.Entities.Comision;
@@ -52,9 +53,6 @@ public class DatosProfesorActivity extends ListActivity {
     private Button _btnOpinar;
     private Button _btnMaterias;
     private String _materias;
-
-    private final static String URL_COMENTARIO = "http://www.masterlist.somee.com/WebService.asmx/getComentarios?idProfe=";
-    private final static String URL_MATERIAS = "http://www.masterlist.somee.com/WebService.asmx/getProfeCatedraComision?idProfe=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,13 +115,13 @@ public class DatosProfesorActivity extends ListActivity {
         _rbProfe.setRating(rating);
 
         JsonReaderMaterias reader = new JsonReaderMaterias(this);
-        reader.execute(URL_MATERIAS);
+        reader.execute(ConstantesGenerales.URL_GET_MATERIAS_PROFE);
     }
 
     private void cargarComentarios() {
         _adapter = new ComentariosAdapter(this);
         JsonReaderComentarios reader = new JsonReaderComentarios(this);
-        reader.execute(URL_COMENTARIO);
+        reader.execute(ConstantesGenerales.URL_GET_COMENTARIO);
     }
 
     @Override

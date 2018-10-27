@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="line_darkGrey">#858687</color>
+    <color name="background_darkGrey">#9fa5ad</color>
+    <color name="background_lightGrey">#c7ced8</color>
+    <color name="background_lightGrey_pressed">#9eb3d1</color>
+    <color name="background_darkGrey_pressed">#8092aa</color>
+</resources>

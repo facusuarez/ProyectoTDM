@@ -112,23 +112,51 @@ namespace MasterList
             string constr = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO comentario (id_profesor, id_usuario, descripcion, puntos, fecha_hora) VALUES (@id_profesor, @id_usuario, @descripcion, @puntos, @fecha_hora)"))
+                
+                SqlTransaction transaction = null;
+                try
                 {
-                    cmd.Parameters.AddWithValue("@id_usuario", id_usuario);
-                    cmd.Parameters.AddWithValue("@id_profesor", id_profesor);
-                    cmd.Parameters.AddWithValue("@puntos", puntos);
-                    cmd.Parameters.AddWithValue("@fecha_hora", DateTime.Now.ToString());
-                    cmd.Parameters.AddWithValue("@descripcion", descripcion);
-                    cmd.Connection = con;
                     con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    Context.Response.Clear();
-                    Context.Response.ContentType = "application/json";
-                    Context.Response.Write("Se agrego el comentario: '" + descripcion+"' con el puntaje: "+puntos);
+                    transaction = con.BeginTransaction();
+                    int resultComentario = InsertComentarioDB(id_profesor, id_usuario, descripcion, puntos, con, transaction);
+                    int resultPuntaje = UpdatePuntajeDB(id_profesor, puntos, con, transaction);
+
+                    if (resultComentario == 0 || resultPuntaje == 0) transaction.Rollback();
+                    else
+                    {
+                        transaction.Commit();
+                        getProfesores();
+                    }
                 }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                }
+                con.Close();
             }
         }
+
+        private int InsertComentarioDB(int id_profesor, int id_usuario, string descripcion, float puntos, SqlConnection con, SqlTransaction transaction)
+        {
+            int result = 0;
+            using (SqlCommand cmd = new SqlCommand("INSERT INTO comentario (id_profesor, id_usuario, descripcion, puntos, fecha_hora) VALUES (@id_profesor, @id_usuario, @descripcion, @puntos, @fecha_hora)", con, transaction))
+            {
+                cmd.Parameters.AddWithValue("@id_usuario", id_usuario);
+                cmd.Parameters.AddWithValue("@id_profesor", id_profesor);
+                cmd.Parameters.AddWithValue("@puntos", puntos);
+                cmd.Parameters.AddWithValue("@fecha_hora", DateTime.Now.ToString());
+                cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                cmd.Connection = con;
+                
+                result = cmd.ExecuteNonQuery();
+                
+                Context.Response.Clear();
+                Context.Response.ContentType = "application/json";
+                Context.Response.Write("Se agrego el comentario: '" + descripcion + "' con el puntaje: " + puntos);
+            }
+            return result;
+        }
+
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public void UpdatePuntaje(string id,string puntaje)
@@ -149,6 +177,25 @@ namespace MasterList
                     Context.Response.Write("Se actualizo el profesor id: " + id + " con el puntaje: " + puntaje); 
                 }
             }
+        }
+
+
+        private int UpdatePuntajeDB(int id_profesor, float puntos, SqlConnection con, SqlTransaction transaction)
+        {
+            int result = 0;
+            using (SqlCommand cmd = new SqlCommand("UPDATE Profesores SET puntaje=@puntaje WHERE id_profesor=@id",con, transaction))
+            {
+                cmd.Parameters.AddWithValue("@id", id_profesor);
+                cmd.Parameters.AddWithValue("@puntaje", puntos);
+                cmd.Connection = con;
+                
+                result = cmd.ExecuteNonQuery();
+                
+                Context.Response.Clear();
+                Context.Response.ContentType = "application/json";
+                Context.Response.Write("Se actualizo el profesor id: " + id_profesor + " con el puntaje: " + puntos);
+            }
+            return result;
         }
     }
 }

@@ -47,6 +47,6 @@
         android:drawablePadding = "0sp"
         android:paddingBottom="110sp"
         android:paddingTop="0sp"
-        android:text="!Bienvenido Futuro Ingeniero! \n Aquí encontrarás los mejores \n profesores por materia"/>
+        android:text="¡Bienvenido Futuro Ingeniero! \n Aquí encontrarás los mejores \n profesores por materia"/>
 
 </LinearLayout>

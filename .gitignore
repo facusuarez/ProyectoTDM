@@ -43,4 +43,18 @@ captures/
 .idea/modules.xml
 .idea/scopes/scope_settings.xml
 .idea/vcs.xml
+.idea/datasources.xml
+.idea/dataSources.ids
+idea/*
 *.iml
+
+
+MasterList/packages/*
+
+# built native files (uncomment if you build your own)
+# *.o
+# *.so
+
+# Windows clutter
+Thumbs.db
+

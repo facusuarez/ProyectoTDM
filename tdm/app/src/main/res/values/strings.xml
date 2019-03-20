@@ -15,5 +15,6 @@
     <string name="sin_comentaris">Sin Comentarios</string>
     <string name="facebook_app_id">2134925633196528</string>
     <string name="fb_login_protocol_scheme">fb2134925633196528</string>
+    <string name="login_message">Inicia sesión para ver tu perfil</string>
 
 </resources>

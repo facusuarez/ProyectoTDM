@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\repos\ProyectoTDM\MasterList" t="IncludeFlat">
+      <e p="MasterList" t="IncludeRecursive">
+        <e p="Bin" t="ExcludeRecursive" />
+        <e p="Index.html" t="Include" />
+        <e p="MasterList.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="PublishProfiles" t="Include">
+            <e p="CustomProfile.pubxml" t="Include" />
+            <e p="CustomProfile1.pubxml" t="Include" />
+          </e>
+        </e>
+        <e p="Web.config" t="Include" />
+        <e p="Web.Debug.config" t="Include" />
+        <e p="Web.Release.config" t="Include" />
+        <e p="WebService.asmx" t="Include" />
+        <e p="WebService.asmx.cs" t="Include" />
+      </e>
+      <e p="MasterList.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+    <e p="C:\Users\rtita\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\rtita\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_MasterList.1620832754.00" t="ExcludeRecursive" />
+  </component>
+</project>

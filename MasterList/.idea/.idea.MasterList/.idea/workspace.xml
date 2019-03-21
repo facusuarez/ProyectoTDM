@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="991b0369-1f74-46aa-a3d3-5d2012649dd3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.MasterList/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.MasterList/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.MasterList/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.MasterList/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MasterList.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MasterList/v15/.suo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MasterList/v15/sqlite3/storage.ide" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/config/applicationhost.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterList/MasterList.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MasterList/MasterList.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterList/obj/Debug/MasterList.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MasterList/obj/Debug/MasterList.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterList/obj/Debug/MasterList.csprojResolveAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MasterList/obj/Debug/MasterList.csprojResolveAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterList/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/MasterList/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8.nupkg" beforeDir="false" afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8.nupkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/Microsoft.Net.Compilers.2.4.0.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/ThirdPartyNotices.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/Microsoft.Build.Tasks.CodeAnalysis.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/Microsoft.CSharp.Core.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/Microsoft.CodeAnalysis.CSharp.Scripting.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/Microsoft.CodeAnalysis.CSharp.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/Microsoft.CodeAnalysis.Scripting.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/Microsoft.CodeAnalysis.VisualBasic.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/Microsoft.CodeAnalysis.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/Microsoft.DiaSymReader.Native.amd64.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/Microsoft.DiaSymReader.Native.x86.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/Microsoft.VisualBasic.Core.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/Microsoft.Win32.Primitives.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.AppContext.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Collections.Immutable.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Console.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Diagnostics.FileVersionInfo.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Diagnostics.Process.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Diagnostics.StackTrace.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.IO.Compression.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.IO.FileSystem.DriveInfo.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.IO.FileSystem.Primitives.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.IO.FileSystem.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.IO.Pipes.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Reflection.Metadata.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Security.AccessControl.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Security.Claims.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Security.Cryptography.Algorithms.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Security.Cryptography.Encoding.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Security.Cryptography.Primitives.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Security.Cryptography.X509Certificates.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Security.Principal.Windows.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Text.Encoding.CodePages.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Threading.Thread.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.ValueTuple.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Xml.ReaderWriter.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Xml.XPath.XDocument.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Xml.XPath.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/System.Xml.XmlDocument.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/VBCSCompiler.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/VBCSCompiler.exe.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/csc.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/csc.exe.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/csc.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/csi.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/csi.exe.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/csi.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/vbc.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/vbc.exe.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Microsoft.Net.Compilers.2.4.0/tools/vbc.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.10.0.3/Newtonsoft.Json.10.0.3.nupkg" beforeDir="false" afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.10.0.3/Newtonsoft.Json.10.0.3.nupkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdm/.idea/libraries/android_android_18.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdm/.idea/libraries/android_android_18.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdm/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdm/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdm/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdm/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdm/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdm/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdm/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdm/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/UserFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdm/app/src/main/java/info/androidhive/tabsswipe/Activities/Activities/UserFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdm/app/src/main/res/layout/fragment_user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdm/app/src/main/res/layout/fragment_user.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdm/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdm/app/src/main/res/values/strings.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1137287606">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.39" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="config" value="1" />
+          <entry key="cs" value="1" />
+          <entry key="csproj" value="1" />
+          <entry key="targets" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="C#" value="1" />
+          <entry key="Config" value="1" />
+          <entry key="Csproj" value="1" />
+          <entry key="MsBuild targets file" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="csproj" value="1" />
+          <entry key="targets" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Csproj" value="1" />
+          <entry key="MsBuild targets file" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MasterList/MasterList.csproj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="125" column="11" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://C:/Windows/Microsoft.NET/Framework/v4.0.30319/Microsoft.CSharp.targets">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="333" column="32" selection-start-line="333" selection-start-column="32" selection-end-line="333" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>visuals</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/MasterList/WebService.asmx.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MasterList/packages.config" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/MasterList/packages.config" />
+        <option value="$PROJECT_DIR$/MasterList/MasterList.csproj" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1402" />
+    <option name="y" value="-20" />
+    <option name="width" value="1400" />
+    <option name="height" value="820" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="MasterList" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="FileSystemExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="MasterList" type="34e6ba20:FileSystemExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="MasterList" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="MasterList" type="34e6ba20:FileSystemExplorerNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/MasterList/MasterList.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="Web" />
+      <option name="PROJECT_TFM" value="" />
+      <browser url="http://localhost:8082" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="991b0369-1f74-46aa-a3d3-5d2012649dd3" name="Default Changelist" comment="" />
+      <created>1543428536870</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1543428536870</updated>
+      <workItem from="1543428541178" duration="1514000" />
+      <workItem from="1543434040209" duration="933000" />
+      <workItem from="1543435122736" duration="380000" />
+      <workItem from="1543868037243" duration="930000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3757000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1288" y="-8" width="1296" height="1000" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26213592" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="NuGet" order="7" sideWeight="0.49919093" weight="0.3290993" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unit Tests" order="11" />
+      <window_info anchor="bottom" id="REST Client" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="13" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.5008091" side_tool="true" weight="0.3290993" />
+      <window_info active="true" anchor="bottom" id="Build" order="15" sideWeight="0.49919093" visible="true" weight="0.3290993" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="5" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/MasterList/WebService.asmx.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MasterList/packages.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MasterList/MasterList.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="125" column="11" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Windows/Microsoft.NET/Framework/v4.0.30319/Microsoft.CSharp.targets">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="333" column="32" selection-start-line="333" selection-start-column="32" selection-end-line="333" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -53,6 +53,9 @@ import java.util.List;
 import info.androidhive.masterlist.Constants;
 import info.androidhive.masterlist.R;
 import info.androidhive.masterlist.authentication.AccountAdapter;
+import info.androidhive.masterlist.entities.UserInfo;
+import info.androidhive.masterlist.json.JsonPostSignIn;
+import info.androidhive.masterlist.json.JsonPostSignUp;
 
 public class LoginActivity extends Activity {
 
@@ -141,39 +144,46 @@ public class LoginActivity extends Activity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //登录
-                String name = txtUser.getText().toString();
-                String psw = txtPassword.getText().toString();
 
-                if (TextUtils.isEmpty(name)) {
-                    Toast.makeText(v.getContext(), "NO SEAS BOLUDO", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                if (TextUtils.isEmpty(psw)) {
-                    Toast.makeText(v.getContext(), "NO SEAS BOLUDO", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                //可以请求服务器获取token
-                Account account = new Account(name, Constants.ACCOUNT_TYPE);
-                AccountManagerCallback<Bundle> callback = new AccountManagerCallback<Bundle>() {
-                    @Override
-                    public void run(AccountManagerFuture<Bundle> future) {
-                        try {
-                            String token = future.getResult().getString(AccountManager.KEY_AUTHTOKEN);
-                            Intent intent = new Intent(LoginActivity.this, WelcomeActivity.class);
-                            Account account1 = new Account(future.getResult().getString(AccountManager.KEY_ACCOUNT_NAME),
-                                    future.getResult().getString(AccountManager.KEY_ACCOUNT_TYPE));
-                            intent.putExtra(Constants.KEY_ACCOUNT, account1);
-                            startActivity(intent);
-                        } catch (OperationCanceledException | IOException | AuthenticatorException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                };
-                accountManager.getAuthToken(account, Constants.AUTH_TOKEN_TYPE, null, LoginActivity.this, callback, null);
+                login();
             }
         });
 
+    }
+
+    private void login() {
+        String name = txtUser.getText().toString();
+        String psw = txtPassword.getText().toString();
+
+        if (TextUtils.isEmpty(name)) {
+            Toast.makeText(this, "NO SEAS BOLUDO", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (TextUtils.isEmpty(psw)) {
+            Toast.makeText(this, "NO SEAS BOLUDO", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Account account = new Account(name, Constants.ACCOUNT_TYPE);
+
+        JsonPostSignIn post = new JsonPostSignIn(new UserInfo("", ""), this);
+        post.execute(Constants.URL_CREATE_USER);
+
+        AccountManagerCallback<Bundle> callback = new AccountManagerCallback<Bundle>() {
+            @Override
+            public void run(AccountManagerFuture<Bundle> future) {
+                try {
+                    Intent intent = new Intent(LoginActivity.this, WelcomeActivity.class);
+                    Account account1 = new Account(future.getResult().getString(AccountManager.KEY_ACCOUNT_NAME),
+                            future.getResult().getString(AccountManager.KEY_ACCOUNT_TYPE));
+                    intent.putExtra(Constants.KEY_ACCOUNT, account1);
+                    startActivity(intent);
+                } catch (OperationCanceledException | IOException | AuthenticatorException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        accountManager.getAuthToken(account, Constants.AUTH_TOKEN_TYPE, null, LoginActivity.this, callback, null);
     }
 
 
@@ -191,7 +201,6 @@ public class LoginActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
 

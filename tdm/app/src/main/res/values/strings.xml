@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Valores generales -->
     <string name="app_name"> Master List</string>
+    <string name="facebook_app_id">2134925633196528</string>
+    <string name="fb_login_protocol_scheme">fb2134925633196528</string>
+
+    <!--Mensajes  -->
     <string name="action_settings">Opciones</string>
     <string name="datos_profesor">Profesor</string>
     <string name="lista_vacia">No se encuentran elementos</string>
@@ -13,8 +18,12 @@
     <string name="opniar">Opinar</string>
     <string name="verMaterias">Ver Materias</string>
     <string name="sin_comentaris">Sin Comentarios</string>
-    <string name="facebook_app_id">2134925633196528</string>
-    <string name="fb_login_protocol_scheme">fb2134925633196528</string>
     <string name="login_message">Inicia sesión para ver tu perfil</string>
+    <string name="signin">Iniciar Sesión</string>
+    <string name="signup">Registrarse</string>
+    <string name="signout">Cerrar Sesión</string>
+
+    <!-- errores-->
+    <string name="error_generic">Se ha producido un error!</string>
 
 </resources>

@@ -8,18 +8,22 @@
     <TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Aca va a ir el usuario"
-        android:textSize="20dp"
-        android:layout_centerInParent="true"/>
+        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:id="@+id/txtUserLogged"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/txtPassword"
-        android:layout_alignRight="@id/txtPassword"
+        android:layout_below="@id/txtUserLogged"
         android:id="@+id/btnLogin"
         android:text="Login"/>
 
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/txtUserLogged"
+        android:id="@+id/btnLogout"
+        android:text="Logout"/>
 
 </RelativeLayout>

@@ -5,10 +5,16 @@
     android:padding="16dp">
 
     <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:inputType="textEmailAddress"/>
+
+    <EditText
         android:id="@+id/edit_name"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:inputType="number"/>
+        android:layout_below="@id/edit_email"/>
 
     <EditText
         android:id="@+id/edit_psw"
@@ -24,6 +30,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_psw"
         android:layout_alignRight="@id/edit_psw"
-        android:text="Sign Up"/>
+        android:text="@string/signup"/>
 
 </RelativeLayout>

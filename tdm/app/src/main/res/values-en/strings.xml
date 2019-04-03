@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Mensajes  -->
+    <string name="action_settings">Options</string>
+    <string name="datos_profesor">Teacher</string>
+    <string name="lista_vacia">No elements found</string>
+    <string name="comisiones">Commissions: </string>
+    <string name="materias">Cathedras: </string>
+    <string name="comentarios">comments </string>
+    <string name="enviar">Send </string>
+    <string name="estrella"> stars</string>
+    <string name="escribir_comentario">Write a comment</string>
+    <string name="opniar">Review</string>
+    <string name="verMaterias">See cathedras</string>
+    <string name="sin_comentaris">No comments</string>
+    <string name="login_message">Log in to see tour profile</string>
+    <string name="signin">Sign in</string>
+    <string name="signup">Sign up</string>
+    <string name="signout">Sign out</string>
+
+    <!--errores-->
+    <string name="error_generic">An error occurred!</string>
+</resources>
